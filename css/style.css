@@ -4443,9 +4443,14 @@ font-family: 'Montserrat', sans-serif;
 
 @media (max-width: 767px){
 	
-.logo-style{
+.hide-logo{
 	display: none !important;
 }
+
+.logo-style {
+    margin-left: 20px;
+}
+
 .mob-no{
 	display:none;
 }
@@ -4490,6 +4495,10 @@ font-family: 'Montserrat', sans-serif;
 
 
 @media (min-width: 767px) and (max-width:3000px){
+
+.logo-name{
+	display:none;
+}
 
 .logo-style{
 	height: 41px;
