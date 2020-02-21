@@ -2851,6 +2851,7 @@ ul.navbar-nav>li.header-get-a-quote:hover>a:after {
     transform: perspective(1px) translate3d(0, 0, 0);
 }
 
+
 .project-item-title {
     font-size: 20px;
 }
@@ -4422,6 +4423,8 @@ font-family: 'Montserrat', sans-serif;
 }
 
 @media (min-width: 768px) {
+	
+	
     .mob-no{
 	font-family: 'Montserrat', sans-serif;
     color: #ffb600;
@@ -4442,7 +4445,21 @@ font-family: 'Montserrat', sans-serif;
 
 
 @media (max-width: 767px){
-	
+	.isotope-img-container .project-item-info-content {
+    opacity: 1;
+    -webkit-transform: perspective(1px) translate3d(0, 0, 0);
+    transform: perspective(1px) translate3d(0, 0, 0);
+}
+.project-cat{
+	display:none;
+}
+.project-item-title a {
+   background: #00000099;
+    display: inline-block;
+    padding: 2px 8px;
+    color: #ffb600 !important;
+    text-transform: uppercase;
+}
 .hide-logo{
 	display: none !important;
 }
