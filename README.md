@@ -1,2 +1,2 @@
-# elavarasan92.github.io
-mywebsite
+# PrinceDecors
+Wedding Decoration and Event Planning website
