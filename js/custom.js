@@ -279,6 +279,11 @@ jQuery(function ($) {
 	/* ----------------------------------------------------------- */
 	$(document).ready(function () {
 
+		$.ajax({
+        url: "http://147.139.1.55/posts"
+    }).then(function(data) {
+       console.log("append data : "+data);
+    });
 		$(".gallery-popup").colorbox({
 			rel: 'gallery-popup',
 			transition: "fade",
