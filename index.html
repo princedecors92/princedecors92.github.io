@@ -34,6 +34,20 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  
+<script>
+        let d = new Date();
+        alert("Today's date is " + d);
+		const Http = new XMLHttpRequest();
+const url='https://wishmecards.com/posts';
+Http.open("GET", url);
+Http.send();
+
+Http.onreadystatechange = (e) => {
+  console.log(Http.responseText)
+}
+
+    </script>
 </head>
 
 <body>
