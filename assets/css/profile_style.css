@@ -42,7 +42,7 @@
 }
  .name_style{
      line-height: 45px;
-     font-size: 40px;
+     font-size: 35px;
      font-weight: bold;
      color: #430297;
 }
@@ -50,7 +50,7 @@
      color: #6747C7;
      font-weight: 700;
      font-size: 1.3rem;
-     line-height: 2.8rem;
+     line-height: 2.5rem;
      font-family: 'H', 'Trebuchet MS', Helvetica;
      font-style: normal;
 }
