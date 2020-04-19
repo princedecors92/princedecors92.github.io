@@ -1,4 +1,14 @@
 /* My CSS */
+.pad_15{
+		 padding-left:15px;
+		 padding-right:15px;
+	 }
+	 .no_pad{
+		 padding:0px;
+	 }
+	 .no_margin{
+		 margin:0px;
+	 }
  .top_background{
      background-color : #7460ee;
      width: 100%;
@@ -7024,6 +7034,19 @@
 /*-- ============================================================== Phone and below ipad(767px) ============================================================== */
  @media (max-width: 767px) {
     /*Header*/
+	.pad_15{
+		 padding-left:15px;
+		 padding-right:15px;
+	 }
+	 .no_pad{
+		 padding:0px;
+	 }
+	 .no_margin{
+		 margin:0px;
+	 }
+	 .no_pad_bottom{
+		 padding-bottom:0px;
+	 }
      .topbar {
          position: fixed;
          width: 100%;
