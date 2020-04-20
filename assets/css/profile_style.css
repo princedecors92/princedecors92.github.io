@@ -40,6 +40,18 @@
      line-height: 1;
      transition: ease-in-out 0.3s;
 }
+
+.footer_font a {
+    font-size: 18px;
+    font-weight: 700 !important;
+    color: #283177;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    transition: ease-in-out 0.3s;
+}
+
  .name_style{
      line-height: 45px;
      font-size: 35px;
