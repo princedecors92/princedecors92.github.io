@@ -4,10 +4,10 @@
 		 padding-right:15px;
 	 }
 	 .no_pad{
-		 padding:0px;
+		 padding:0px !important;
 	 }
 	 .no_margin{
-		 margin:0px;
+		 margin:0px !important;
 	 }
  .top_background{
      background-color : #7460ee;
@@ -16,7 +16,7 @@
 }
  .center_align{
      height: 100%;
-     display: flex;
+    display: flex !important;
      justify-content: center;
      align-items: center;
 }
@@ -7021,6 +7021,9 @@
 }
 /*-- ============================================================== Ipad & above all(768px) ============================================================== */
  @media (min-width: 768px) {
+	 .big_pad{
+		    padding-top: 30px !important;
+	 }
      .navbar-header {
          width: 240px;
          -webkit-flex-shrink: 0;
