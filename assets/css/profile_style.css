@@ -101,8 +101,8 @@
 }
 /* Helper class to divide the icons */
  .social-margin {
-     margin-left: 5px;
-     margin-right: 5px;
+     margin-left: 1em;
+     margin-right: 1em;
 }
  a, a:hover, a:focus, a:active {
      text-decoration: none;
