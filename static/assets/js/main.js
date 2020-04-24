@@ -146,13 +146,6 @@
     return false;
   });
   
-    $('.buy-now').click(function() {
-    $('html, body').animate({
-      scrollTop: 0
-    }, 1500, 'easeInOutExpo');
-    return false;
-  });
-
   // Initiate the venobox plugin
   $(window).on('load', function() {
     $('.venobox').venobox();
