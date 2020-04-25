@@ -23,7 +23,6 @@
 <body>
 <!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
 
-<body onload="renderButton()">
 <div class="container">
 <div class="row">
 <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
@@ -84,7 +83,7 @@
         function(googleUser) {
          // document.getElementById('name').innerText = "Signed in: " +googleUser.getBasicProfile().getName();
               
-			  console.log("Signed in user : "+googleUser.getBasicProfile().getName();)
+			  console.log("Signed in user : "+googleUser.getBasicProfile().getName());
         }, function(error) {
           alert(JSON.stringify(error, undefined, 2));
         });
