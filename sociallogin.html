@@ -8,8 +8,8 @@
 <meta name="googlebot" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="google-signin-client_id" content="4894903574-rl2k1hhdbr6br42b9n9t95tr62fiu46c.apps.googleusercontent.com">
-<script src="https://apis.google.com/js/client:platform.js?onload=renderButton" async defer></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  <script src="https://apis.google.com/js/api:client.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
@@ -28,7 +28,7 @@
 <div class="card-body">
 <h5 class="card-title text-center">Sign In</h5>
 <form class="form-signin">
-<button id ="gSignIn" class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
+<button id ="customBtn" class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
 <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="button" onclick="fbLogin()" id="fbLink"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button>
 <hr class="my-4">
 <div class="form-label-group">
@@ -56,7 +56,44 @@
 </div>
 </body>
 <script src="/static/assets/js/facebook_login.js"></script>
-<script onload="renderButton();" src="/static/assets/js/google_login.js"></script>
+  <script>
+  var googleUser = {};
+  var startApp = function() {
+    gapi.load('auth2', function(){
+      // Retrieve the singleton for the GoogleAuth library and set up the client.
+      auth2 = gapi.auth2.init({
+        client_id: '4894903574-rl2k1hhdbr6br42b9n9t95tr62fiu46c.apps.googleusercontent.com',
+        cookiepolicy: 'single_host_origin',
+        // Request scopes in addition to 'profile' and 'email'
+        //scope: 'additional_scope'
+      });
+      attachSignin(document.getElementById('customBtn'));
+    });
+  };
+
+  function attachSignin(element) {
+    console.log(element.id);
+    auth2.attachClickHandler(element, {},
+        function(googleUser) {
+         // document.getElementById('name').innerText = "Signed in: " +googleUser.getBasicProfile().getName();
+              
+			  console.log("Signed in user : "+googleUser.getBasicProfile().getName());
+        }, function(error) {
+          alert(JSON.stringify(error, undefined, 2));
+        });
+  }
+  
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+        /*document.getElementsByClassName("userContent")[0].innerHTML = '';
+        document.getElementsByClassName("userContent")[0].style.display = "none";
+        document.getElementById("gSignIn").style.display = "block";*/
+    });
+    
+    auth2.disconnect();
+}
+  </script>
 
 </body>
 </html>
