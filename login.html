@@ -14,15 +14,13 @@
 <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-
-<style id="compiled-css" type="text/css">
 <link href="/static/assets/css/login_style.css" rel="stylesheet">
-</style>
 
 </head>
 <body>
 <!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
 
+<body>
 <div class="container">
 <div class="row">
 <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
@@ -30,7 +28,7 @@
 <div class="card-body">
 <h5 class="card-title text-center">Sign In</h5>
 <form class="form-signin">
-<button class="btn btn-lg btn-google btn-block text-uppercase" id="customBtn" type="button"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
+<button id ="customBtn" class="btn btn-lg btn-google btn-block text-uppercase" type="button"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
 <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="button" onclick="fbLogin()" id="fbLink"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button>
 <hr class="my-4">
 <div class="form-label-group">
@@ -56,12 +54,8 @@
 </div>
 </div>
 </div>
-
-
 </body>
-
-
-<!-- TODO: Missing CoffeeScript 2 -->
+<script src="/static/assets/js/facebook_login.js"></script>
   <script>
   var googleUser = {};
   var startApp = function() {
@@ -84,6 +78,17 @@
          // document.getElementById('name').innerText = "Signed in: " +googleUser.getBasicProfile().getName();
               
 			  console.log("Signed in user : "+googleUser.getBasicProfile().getName());
+			     var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
         }, function(error) {
           alert(JSON.stringify(error, undefined, 2));
         });
@@ -99,9 +104,8 @@
     
     auth2.disconnect();
 }
+startApp();
   </script>
 
-<script src="/static/assets/js/facebook_login.js"></script>
-<script src="/static/assets/js/google_login.js"></script>
 </body>
 </html>
