@@ -4,13 +4,15 @@
 <meta name="google-signin-client_id" content="4894903574-rl2k1hhdbr6br42b9n9t95tr62fiu46c.apps.googleusercontent.com">
 <script src="https://apis.google.com/js/client:platform.js?onload=renderButton" async defer></script>
 </head>
-<body onload="renderButton()">
+<body>
 
 <!-- Display Google sign-in button -->
 <div id="gSignIn"></div>
 
 <!-- Show the user profile details -->
 <div class="userContent" style="display: none;"></div>
+
+<button onclick="renderButton()">Click me</button>
 
 <script>
 // Render Google Sign-in button
