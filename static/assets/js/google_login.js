@@ -1,62 +1,41 @@
-function renderButton() {
-    gapi.signin2.render('gSignIn', {
-        'scope': 'profile email',
-        'width': 'auto',
-        'height': 'auto',
-        'longtitle': true,
-        'theme': 'dark',
-		'display':'none !important',
-		'visibility': 'hidden',
-        'onsuccess': onSuccess,
-        'onfailure': onFailure
+var googleUser = {};
+  var startApp = function() {
+    gapi.load('auth2', function(){
+      // Retrieve the singleton for the GoogleAuth library and set up the client.
+      auth2 = gapi.auth2.init({
+        client_id: '4894903574-rl2k1hhdbr6br42b9n9t95tr62fiu46c.apps.googleusercontent.com',
+        cookiepolicy: 'single_host_origin',
+        // Request scopes in addition to 'profile' and 'email'
+        //scope: 'additional_scope'
+      });
+      attachSignin(document.getElementById('customBtn'));
     });
-}
+  };
 
-// Sign-in success callback
-function onSuccess(googleUser) {
-    // Get the Google profile data (basic)
-    //var profile = googleUser.getBasicProfile();
-     var id_token = googleUser.getAuthResponse().id_token;
+  function attachSignin(element) {
+    console.log(element.id);
+    auth2.attachClickHandler(element, {},
+        function(googleUser) {
+         // document.getElementById('name').innerText = "Signed in: " +googleUser.getBasicProfile().getName();
+              
+			  console.log("Signed in user : "+googleUser.getBasicProfile().getName());
+			     var profile =  	.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('FirstName: ' + profile.getGivenName());
+        console.log('LastName: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
 
-     var auth2 = gapi.auth2.getAuthInstance();
-     auth2.disconnect();
-	console.log("Automatic call");
-    // Retrieve the Google account data
-    gapi.client.load('oauth2', 'v2', function () {
-        var request = gapi.client.oauth2.userinfo.get({
-            'userId': 'me'
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+        }, function(error) {
+          alert(JSON.stringify(error, undefined, 2));
         });
-        request.execute(function (resp) {
-			
-			console.log("UserData");
-	console.log(JSON. stringify(resp));
-	var given_name = resp.given_name;
-	var id = resp.id;
-	var name = resp.name;
-	var email = resp.email;
-	var gender = resp.gender;
-	var locale = resp.locale;
-	var picture_url = resp.picture;
-	var link = resp.link;
-	
-            // Display the user details
-            /*var profileHTML = '<h3>Welcome '+resp.given_name+'! <a href="javascript:void(0);" onclick="signOut();">Sign out</a></h3>';
-            profileHTML += '<img src="'+resp.picture+'"/><p><b>Google ID: </b>'+resp.id+'</p><p><b>Name: </b>'+resp.name+'</p><p><b>Email: </b>'+resp.email+'</p><p><b>Gender: </b>'+resp.gender+'</p><p><b>Locale: </b>'+resp.locale+'</p><p><b>Google Profile:</b> <a target="_blank" href="'+resp.link+'">click to view profile</a></p>';
-            document.getElementsByClassName("userContent")[0].innerHTML = profileHTML;
-            
-            document.getElementById("gSignIn").style.display = "none";
-            document.getElementsByClassName("userContent")[0].style.display = "block";*/
-        });
-    });
-}
-
-// Sign-in failure callback
-function onFailure(error) {
-    alert(error);
-}
-
-// Sign out the user
-function signOut() {
+  }
+  
+  function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
         /*document.getElementsByClassName("userContent")[0].innerHTML = '';
