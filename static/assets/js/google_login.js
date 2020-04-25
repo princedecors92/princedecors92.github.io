@@ -20,7 +20,7 @@ function onSuccess(googleUser) {
 
      var auth2 = gapi.auth2.getAuthInstance();
      auth2.disconnect();
-
+	console.log("Automatic call");
     // Retrieve the Google account data
     gapi.client.load('oauth2', 'v2', function () {
         var request = gapi.client.oauth2.userinfo.get({
