@@ -5,8 +5,9 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
   <body>
-   <!-- <button class="g-signin2" onclick="onSignIn" data-theme="dark"></button>-->
-	<button name="Gsignin"  type="button" onclick="onSignIn" id="fbLink">GSIGN</button>
+<button onclick="login()">Click me</button>
+	
+	<a href="#" onclick="signOut();">Sign out</a>
     <script>
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
@@ -22,6 +23,31 @@
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
       }
+	   function login() {
+	  gapi.auth2.authorize({
+  client_id: '4894903574-rl2k1hhdbr6br42b9n9t95tr62fiu46c.apps.googleusercontent.com',
+  scope: 'email profile openid',
+  response_type: 'id_token permission'
+}, function(response) {
+  if (response.error) {
+    console.log("Error login : "+response.error)
+    return;
+  }
+  // The user authorized the application for the scopes requested.
+  console.log("UserData");
+	console.log(JSON. stringify(resp));
+  var accessToken = response.access_token;
+  var idToken = response.id_token;
+  console.log("
+  // You can also now use gapi.client to perform authenticated requests.
+});}
+
+	    function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
     </script>
   </body>
 </html>
