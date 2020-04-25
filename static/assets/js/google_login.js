@@ -16,7 +16,11 @@ function renderButton() {
 function onSuccess(googleUser) {
     // Get the Google profile data (basic)
     //var profile = googleUser.getBasicProfile();
-    
+     var id_token = googleUser.getAuthResponse().id_token;
+
+     var auth2 = gapi.auth2.getAuthInstance();
+     auth2.disconnect();
+
     // Retrieve the Google account data
     gapi.client.load('oauth2', 'v2', function () {
         var request = gapi.client.oauth2.userinfo.get({
