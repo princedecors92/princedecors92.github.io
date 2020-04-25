@@ -9,13 +9,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<script
-type="text/javascript"
-src="/js/lib/dummy.js"
-></script>
-
-<link rel="stylesheet" type="text/css" href="/css/result-light.css">
-
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
@@ -268,6 +261,8 @@ function fbLogin() {
 function getFbUserData(){
     FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email,link,gender,locale,picture'},
     function (response) {
+	console.log("UserData");
+	console.log(JSON. stringify(response));
         document.getElementById('fbLink').setAttribute("onclick","fbLogout()");
         document.getElementById('fbLink').innerHTML = 'Logout from Facebook';
         document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.first_name + '!';
