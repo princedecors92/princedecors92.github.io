@@ -1,53 +1,53 @@
 <html lang="en">
-  <head>
-    <meta name="google-signin-scope" content="profile email">
-   <meta name="google-signin-client_id" content="4894903574-rl2k1hhdbr6br42b9n9t95tr62fiu46c.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-  </head>
-  <body>
-<button onclick="login()">Click me</button>
-	
-	<a href="#" onclick="signOut();">Sign out</a>
-    <script>
-      function onSignIn(googleUser) {
-        // Useful data for your client-side scripts:
-        var profile = googleUser.getBasicProfile();
-        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        console.log('Full Name: ' + profile.getName());
-        console.log('Given Name: ' + profile.getGivenName());
-        console.log('Family Name: ' + profile.getFamilyName());
-        console.log("Image URL: " + profile.getImageUrl());
-        console.log("Email: " + profile.getEmail());
-
-        // The ID token you need to pass to your backend:
-        var id_token = googleUser.getAuthResponse().id_token;
-        console.log("ID Token: " + id_token);
-      }
-	   function login() {
-	  gapi.auth2.authorize({
-  client_id: '4894903574-rl2k1hhdbr6br42b9n9t95tr62fiu46c.apps.googleusercontent.com',
-  scope: 'email profile openid',
-  response_type: 'id_token permission'
-}, function(response) {
-  if (response.error) {
-    console.log("Error login : "+response.error)
-    return;
-  }
-  // The user authorized the application for the scopes requested.
-  console.log("UserData");
-	console.log(JSON. stringify(resp));
-  var accessToken = response.access_token;
-  var idToken = response.id_token;
-  console.log("
-  // You can also now use gapi.client to perform authenticated requests.
-});}
-
-	    function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
-    </script>
-  </body>
+   <head>
+      <meta name="google-signin-scope" content="profile email">
+      <meta name="google-signin-client_id" content="4894903574-rl2k1hhdbr6br42b9n9t95tr62fiu46c.apps.googleusercontent.com">
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+   </head>
+   <body>
+      <button onclick="login()">Click me</button>
+      <a href="#" onclick="signOut();">Sign out</a>
+      <script>
+         function onSignIn(googleUser) {
+           // Useful data for your client-side scripts:
+           var profile = googleUser.getBasicProfile();
+           console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+           console.log('Full Name: ' + profile.getName());
+           console.log('Given Name: ' + profile.getGivenName());
+           console.log('Family Name: ' + profile.getFamilyName());
+           console.log("Image URL: " + profile.getImageUrl());
+           console.log("Email: " + profile.getEmail());
+         
+           // The ID token you need to pass to your backend:
+           var id_token = googleUser.getAuthResponse().id_token;
+           console.log("ID Token: " + id_token);
+         }
+		 
+         function login() {
+         gapi.auth2.authorize({
+         client_id: '4894903574-rl2k1hhdbr6br42b9n9t95tr62fiu46c.apps.googleusercontent.com',
+         scope: 'email profile openid',
+         response_type: 'id_token permission'
+         }, function(response) {
+         if (response.error) {
+         console.log("Error login : "+response.error)
+         return;
+         }
+         // The user authorized the application for the scopes requested.
+         console.log("UserData");
+         console.log(JSON. stringify(resp));
+         var accessToken = response.access_token;
+         var idToken = response.id_token;
+         console.log("
+         // You can also now use gapi.client to perform authenticated requests.
+         });}
+         
+         function signOut() {
+         var auth2 = gapi.auth2.getAuthInstance();
+         auth2.signOut().then(function () {
+         console.log('User signed out.');
+         });
+         }
+      </script>
+   </body>
 </html>
