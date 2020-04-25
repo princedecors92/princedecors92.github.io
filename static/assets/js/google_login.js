@@ -1,11 +1,12 @@
 function renderButton() {
     gapi.signin2.render('gSignIn', {
         'scope': 'profile email',
-        'width': 240,
-        'height': 50,
+        'width': 'auto',
+        'height': 'auto',
         'longtitle': true,
         'theme': 'dark',
-		'display':'none',
+		'display':'none !important',
+		'visibility': 'hidden',
         'onsuccess': onSuccess,
         'onfailure': onFailure
     });
