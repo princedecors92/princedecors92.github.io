@@ -19,7 +19,7 @@ var googleUser = {};
          // document.getElementById('name').innerText = "Signed in: " +googleUser.getBasicProfile().getName();
               
 			  console.log("Signed in user : "+googleUser.getBasicProfile().getName());
-			     var profile =  	.getBasicProfile();
+			     var profile =  	googleUser.getBasicProfile();
         console.log("ID: " + profile.getId()); // Don't send this directly to your server!
         console.log('Full Name: ' + profile.getName());
         console.log('FirstName: ' + profile.getGivenName());
