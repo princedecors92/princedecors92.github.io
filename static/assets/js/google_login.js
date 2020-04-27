@@ -42,7 +42,6 @@ var googleUser = {};
         document.getElementsByClassName("userContent")[0].style.display = "none";
         document.getElementById("gSignIn").style.display = "block";*/
     });
-    	startApp();
     auth2.disconnect();
 
 }
