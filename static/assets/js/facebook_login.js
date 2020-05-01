@@ -1,3 +1,4 @@
+var baseUrl = "http://localhost:3500/";
 // tell the embed parent frame the height of the content
 if (window.parent && window.parent.parent){
 window.parent.parent.postMessage(["resultsFrame", {
@@ -48,6 +49,23 @@ function fbLogin() {
     }, {scope: 'email'});
 }
 
+function fbLoginAjax(fbLogin){
+			$.ajax({
+            type: "POST",
+            url: baseUrl + "auth/socialauth",
+            contentType: "application/json",
+			data:fbLogin,
+            success: function(data) {
+                console.log(data);
+                localStorage.token = data.token;
+                alert('Got a token from the server! Token: ' + data.token);
+            },
+            error: function() {
+                alert("Login Failed");
+            }
+        });
+		}
+		
 // Fetch the user profile data from facebook
 function getFbUserData(){
     FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email,link,gender,locale,picture'},
@@ -62,10 +80,15 @@ function getFbUserData(){
 	var locale = response.locale;
 	var picture_url = response.picture.data.url;
 	var link = response.link;
-       /* document.getElementById('fbLink').setAttribute("onclick","fbLogout()");
-        document.getElementById('fbLink').innerHTML = 'Logout from Facebook';
-        document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.first_name + '!';
-        document.getElementById('userData').innerHTML = '<p><b>FB ID:</b> '+response.id+'</p><p><b>Name:</b> '+response.first_name+' '+response.last_name+'</p><p><b>Email:</b> '+response.email+'</p><p><b>Gender:</b> '+response.gender+'</p><p><b>Locale:</b> '+response.locale+'</p><p><b>Picture:</b> <img src="'+response.picture.data.url+'"/></p><p><b>FB Profile:</b> <a target="_blank" href="'+response.link+'">click to view profile</a></p>';*/
+
+		var loginData = new Object();
+		loginData.user_name = first_name+ "  "+ last_name;
+		loginData.email = email;
+		loginData.picture_link = picture_url;
+
+		var fbLogin = JSON.stringify(loginData);
+		fbLoginAjax(fbLogin);
+
     });
 }
 

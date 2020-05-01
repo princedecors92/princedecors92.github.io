@@ -16,16 +16,15 @@ var googleUser = {};
     console.log(element.id);
     auth2.attachClickHandler(element, {},
         function(googleUser) {
-         // document.getElementById('name').innerText = "Signed in: " +googleUser.getBasicProfile().getName();
-              
-			  console.log("Signed in user : "+googleUser.getBasicProfile().getName());
-			     var profile =  	googleUser.getBasicProfile();
+		console.log("Signed in user : "+googleUser.getBasicProfile().getName());
+		var profile =  	googleUser.getBasicProfile();
         console.log("ID: " + profile.getId()); // Don't send this directly to your server!
         console.log('Full Name: ' + profile.getName());
         console.log('FirstName: ' + profile.getGivenName());
         console.log('LastName: ' + profile.getFamilyName());
         console.log("Image URL: " + profile.getImageUrl());
         console.log("Email: " + profile.getEmail());
+
 
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;

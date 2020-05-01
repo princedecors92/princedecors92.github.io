@@ -15,6 +15,14 @@ box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 }
 
 .card-signin .card-title {
+	font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #333;
+    font-size: 28px;
+    position: relative;
+    margin: 0px;
+    margin-bottom: 20px;
+    text-align: center;
 margin-bottom: 2rem;
 font-weight: 300;
 font-size: 1.5rem;
@@ -132,4 +140,21 @@ display: none;
 .form-label-group input:-ms-input-placeholder {
 color: #777;
 }
+}
+
+.form-signin div label.error {
+	margin-top: 50px;
+    margin-left: 15px;
+    margin-bottom: 52px;
+    padding-left: 0;
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    width: 100%;
+    background: none;
+    color: red;
+	font-size: 16px;
+}
+
+
 }
