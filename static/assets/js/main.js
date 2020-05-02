@@ -3,8 +3,8 @@
   "use strict";
 
 $("#buyNow").on('click', function() {
-  alert("inside onclick");
-  window.location = "https://pages.razorpay.com/pl_ElRHr5q55UvKL0/view";
+  console.log("inside buyNow");
+  window.open('https://pages.razorpay.com/pl_ElRHr5q55UvKL0/view', '_blank');
 });
 
   // Preloader
