@@ -2,6 +2,11 @@
 !(function($) {
   "use strict";
 
+$("#buyNow").on('click', function() {
+  alert("inside onclick");
+  window.location = "https://p-y.tm/1Kd-tTZ";
+});
+
   // Preloader
   $(window).on('load', function() {
     if ($('#preloader').length) {
@@ -9,15 +14,6 @@
         $(this).remove();
       });
     }
-  });
-
-  var $loading = $('#preloader').hide();
-  $(document)
-  .ajaxStart(function () {
-    $loading.show();
-  })
-  .ajaxStop(function () {
-    $loading.hide();
   });
   
   // Smooth scroll for the navigation menu and links with .scrollto classes

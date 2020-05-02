@@ -25,7 +25,13 @@ $(document).ready(function() {
                     var x = document.getElementById("invalid_cred");
                     x.style.display = "none";
                     console.log('Got a token from the server! Token: ' + data.token);
-					window.location = "https://wishmecards.com/";
+					if(localStorage.buy){
+						window.location = "https://p-y.tm/1Kd-tTZ";
+					}
+					else{
+						window.location = "https://wishmecards.com/";
+					}
+					
                 },
                 error: function(xhr, status, error) {
                     var err = eval("(" + xhr.responseText + ")");
