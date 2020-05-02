@@ -26,7 +26,7 @@ $(document).ready(function() {
                     x.style.display = "none";
                     console.log('Got a token from the server! Token: ' + data.token);
 					if(localStorage.buy){
-						window.location = "https://p-y.tm/1Kd-tTZ";
+						window.location = "https://pages.razorpay.com/pl_ElRHr5q55UvKL0/view";
 					}
 					else{
 						window.location = "https://wishmecards.com/";

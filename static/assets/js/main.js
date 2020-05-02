@@ -4,7 +4,7 @@
 
 $("#buyNow").on('click', function() {
   alert("inside onclick");
-  window.location = "https://p-y.tm/1Kd-tTZ";
+  window.location = "https://pages.razorpay.com/pl_ElRHr5q55UvKL0/view";
 });
 
   // Preloader
