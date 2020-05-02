@@ -8,6 +8,9 @@ background: #007bff;
 background: linear-gradient(to right, #0062E6, #33AEFF);
 }
 
+input:invalid { margin-bottom:39px;}
+    input:valid { margin-bottom:0px; }
+
 .invalid_cred {
 	display:none;
 	color: red;

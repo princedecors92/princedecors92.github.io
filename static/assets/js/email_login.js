@@ -9,7 +9,6 @@ $(document).ready(function() {
         console.log("Email Login")
         var email = document.getElementById("inputEmail").value;
         var password = document.getElementById("inputPassword").value;
-        validateLogin();
         if (formValid) {
             console.log("Valid input");
             $.ajax({
@@ -26,6 +25,7 @@ $(document).ready(function() {
                     var x = document.getElementById("invalid_cred");
                     x.style.display = "none";
                     console.log('Got a token from the server! Token: ' + data.token);
+					window.location = "https://wishmecards.com/";
                 },
                 error: function(xhr, status, error) {
                     var err = eval("(" + xhr.responseText + ")");
@@ -174,19 +174,6 @@ $(document).ready(function() {
             $loading.hide();
             console.log("ajax stop");
         });
-
-    function validateLogin() {
-        if (document.getElementById("inputEmail").validity.valid) {
-            document.getElementById("inputEmail").style.marginBottom = "0px";
-        } else {
-            document.getElementById("inputEmail").style.marginBottom = "39px";
-        }
-        if (document.getElementById("inputPassword").validity.valid) {
-            document.getElementById("inputPassword").style.marginBottom = "0px";
-        } else {
-            document.getElementById("inputPassword").style.marginBottom = "39px";
-        }
-    }
 
 
 });
