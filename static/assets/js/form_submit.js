@@ -1,14 +1,56 @@
 var baseUrl = "http://localhost:3500/";
+
+jQuery.validator.setDefaults({
+		  	debug: true,
+		  	success:  function(label){
+        		label.attr('id', 'valid');
+   		 	},
+		});
+		$( "#loginForm" ).validate({
+		  	messages: {
+		  		inputEmail: {
+		  			required: "Please enter email"
+		  		},
+		  		inputPassword: {
+	  				required: "Please enter password"
+		  		}
+		  	}
+		});
+		
 $(document).ready(function() {
 
-
+ var $loading = $('#loader').hide();
+  $(document)
+  .ajaxStart(function () {
+    $loading.show();
+	console.log("ajax start");
+  })
+  .ajaxStop(function () {
+    $loading.hide();
+	console.log("ajax stop");
+  });
+  
 	$('#emailLogin').click(function() {
-		//event.preventDefault();
-		var formValid = $("#emailLoginForm").valid();
+		 event.preventDefault();
+		var formValid = $("#loginForm").valid();
 		console.log("Form valid : "+formValid)
+		console.log("Email Login")
 		var email = document.getElementById("inputEmail").value;
 		var password = document.getElementById("inputPassword").value;
-        $.ajax({
+		if(document.getElementById("inputEmail").validity.valid){
+			document.getElementById("inputEmail").style.marginBottom = "0px";
+		}else 
+		{
+			document.getElementById("inputEmail").style.marginBottom = "39px";
+		}
+		if(document.getElementById("inputPassword").validity.valid){
+			document.getElementById("inputPassword").style.marginBottom = "0px";
+		}else{
+			document.getElementById("inputPassword").style.marginBottom = "39px";
+		}
+		if(formValid){
+			console.log("Valid input");
+			 $.ajax({
             type: "POST",
             url: baseUrl + "auth/login",
             contentType: "application/json",
@@ -19,17 +61,26 @@ $(document).ready(function() {
             success: function(data) {
                 console.log(data);
                 localStorage.token = data.token;
-                alert('Got a token from the server! Token: ' + data.token);
+				var x = document.getElementById("invalid_cred");
+				x.style.display = "none";
+                console.log('Got a token from the server! Token: ' + data.token);
             },
             error: function(xhr, status, error) {
 				var err = eval("(" + xhr.responseText + ")");
 				console.log("xhr.responseText : "+xhr.responseText);
 				console.log("status : "+status);
 				console.log("error : "+error);
-				console.log("err.Message : "+xhr.responseText.data);
-				alert(error);
+				if(error == "UNAUTHORIZED"){
+					var x = document.getElementById("invalid_cred");
+					x.style.display = "block";
+				}
+				$loading.hide();
 				}
         });
+		}else{
+			console.log("Invalid input");
+		}
+       
     });
 	
 
