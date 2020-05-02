@@ -59,6 +59,12 @@ function fbLoginAjax(fbLogin){
                 console.log(data);
                 localStorage.token = data.token;
                 alert('Got a token from the server! Token: ' + data.token);
+				if(localStorage.buy){
+						window.location = "https://pages.razorpay.com/pl_ElRHr5q55UvKL0/view";
+					}
+					else{
+						window.location = "https://wishmecards.com/";
+					}
             },
             error: function() {
                 alert("Login Failed");

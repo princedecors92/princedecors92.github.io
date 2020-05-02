@@ -29,6 +29,13 @@ var googleUser = {};
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
+		
+		if(localStorage.buy){
+						window.location = "https://pages.razorpay.com/pl_ElRHr5q55UvKL0/view";
+					}
+					else{
+						window.location = "https://wishmecards.com/";
+					}
         }, function(error) {
           alert(JSON.stringify(error, undefined, 2));
         });

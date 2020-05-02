@@ -36,6 +36,7 @@ $(document).ready(function() {
                 error: function(xhr, status, error) {
                     var err = eval("(" + xhr.responseText + ")");
                     console.log("xhr.responseText : " + xhr.responseText);
+					console.log(xhr.status);
                     console.log("status : " + status);
                     console.log("error : " + error);
                     if (error == "UNAUTHORIZED") {
@@ -90,7 +91,13 @@ $(document).ready(function() {
             success: function(data) {
                 console.log(data);
                 localStorage.token = data.token;
-                alert('Got a token from the server! Token: ' + data.token);
+                console.log('Got a token from the server! Token: ' + data.token);
+				if(localStorage.buy){
+						window.location = "https://pages.razorpay.com/pl_ElRHr5q55UvKL0/view";
+					}
+					else{
+						window.location = "https://wishmecards.com/";
+					}
             },
             error: function(xhr, status, error) {
                 var err = eval("(" + xhr.responseText + ")");
@@ -98,7 +105,7 @@ $(document).ready(function() {
                 console.log("status : " + status);
                 console.log("error : " + error);
                 console.log("err.Message : " + xhr.responseText.error);
-                alert(error);
+                console.log(error);
             }
         });
     });
