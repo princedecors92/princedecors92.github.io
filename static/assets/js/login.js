@@ -29,7 +29,8 @@ $(document).ready(function() {
 						window.location = "https://pages.razorpay.com/pl_ElRHr5q55UvKL0/view";
 					}
 					else{
-						window.location = "https://wishmecards.com/";
+						//window.location = "https://wishmecards.com/";
+						window.location.href="index.html";
 					}
 					
                 },
@@ -96,7 +97,8 @@ $(document).ready(function() {
 						window.location = "https://pages.razorpay.com/pl_ElRHr5q55UvKL0/view";
 					}
 					else{
-						window.location = "https://wishmecards.com/";
+						//window.location = "https://wishmecards.com/";
+						window.location.href="index.html"
 					}
             },
             error: function(xhr, status, error) {
