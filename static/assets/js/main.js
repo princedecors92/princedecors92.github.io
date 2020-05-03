@@ -2,7 +2,7 @@
 !(function($) {
   "use strict";
 
-$("#buyNow").on('click', function() {
+$(".buyNow").on('click', function() {
   console.log("inside buyNow");
   window.open('https://rzp.io/l/AoxsXkt', '_blank');
 });
