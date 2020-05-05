@@ -3,6 +3,16 @@ body {
 	background: linear-gradient(to right, #0062E6, #33AEFF);
 }
 
+/***********for edit card ***********/
+.address_style{
+    height: 72px;
+    width: 95%;
+    border: 1px solid #ced4da;
+    border-radius: 2rem !important;
+    padding: 14.5px 15px;
+	margin-bottom: 27px;
+}
+
 .div_center {
 	display: flex;
 	justify-content: center;
@@ -363,6 +373,10 @@ input:-moz-placeholder {
 /* Responsive */
 
 @media screen and (max-width: 768px) {
+	.address_style{
+    height: 100px;
+    width: 89.5%;
+}
 	.page-content {
 		width: 100%;
 		margin: 0 auto;

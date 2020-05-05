@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Wishmecards</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+	<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="/static/assets/css/form_style.css"/>
+	<link href="/static/assets/css/css-loader.css" rel="stylesheet">
+</head>
+<body class="form-v2">
+<div id="loader" class="loader loader-default is-active"></div>
+	<div class="page-content">
+		<div class="form-v2-content"  style="margin-top:30px;">
+			<form class="form-detail" action="#" method="post" id="myform">
+				<h2 style="font-size: 22px !important;">Create or Edit Business Card</h2>
+				<div class="form-row">
+					<label for="user_name">Name:</label>
+					<input type="text" name="user_name" id="user_name" class="input-text"  minlength="1" maxlength="50" required >
+				</div>
+				<div class="form-row">
+					<label for="designation">Designation:</label>
+					<input type="text" name="designation" id="designation" placeholder="Ex: Director" class="input-text" minlength="1" maxlength="50" required>
+				</div>
+				<div class="form-row">
+					<label for="company_name">CompanyName:</label>
+					<input type="text" name="company_name" id="company_name" class="input-text" placeholder="Ex: PrinceDecors" minlength="1" maxlength="50" required>
+				</div>
+				<div class="form-row">
+					<label for="email">Email:</label>
+					<input type="text" name="email" id="email" class="input-text" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+				</div>
+				<div class="form-row">
+					<label for="mobile_no">Mobile:</label>
+					<input type="tel" id="mobile_no" name="mobile_no" placeholder="Ex: 8531990331" minlength="10" maxlength="10" style="margin-bottom:27px;"  required>
+				</div>
+				<div class="form-row">
+					<label for="company_address">CompanyAddress:</label>
+					<textarea id="company_address" name="company_address" class ="address_style" minlength="5" maxlength="200" placeholder="Address"></textarea>
+				</div>
+				<div class="form-row">
+					<label for="services_provided">Services Provided:</label>
+					<input type="text" name="services_provided" id="services_provided" minlength="5" maxlength="200" placeholder="Ex: construction" class="input-text">
+				</div>
+				<div id="serverError" class="form-row serverError">
+					<label class="duplicateEmail" for="serverError">Internal Server error </label>
+				</div>
+				<div class="div_center form-row-last">
+					 <input style="margin-right :10px; width :100px; " type="button" name="register" id="cancelCard" class="register" value="Cancel">
+                  <input style="margin-left :10px; width :100px;" type="submit" name="register" id="createCard" class="register" value="Next">
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+	<script src="/static/assets/js/edit_card.js"></script>
+</body>
+</html>
