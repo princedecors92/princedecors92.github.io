@@ -37,11 +37,11 @@ $(document).ready(function() {
                     }
                 },
                 error: function(xhr, status, error) {
-                    var err = eval("(" + xhr.responseText + ")");
+                    //var err = eval("(" + xhr.responseText + ")");
                     console.log("xhr.responseText : " + xhr.responseText);
                     console.log("status : " + status);
                     console.log("error : " + error);
-                    console.log("err.Message : " + xhr.responseText.error);
+                   // console.log("err.Message : " + xhr.responseText.error);
                     console.log(error);
                     console.log("xhr.status : " + xhr.status);
 
