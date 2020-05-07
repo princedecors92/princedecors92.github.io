@@ -57,8 +57,8 @@ $(document).ready(function() {
             }),
             success: function(data) {
                 console.log(data);
-                localStorage.token = data.token;
-                console.log('Got a token from the server! Token: ' + data.token);
+                localStorage.token = data.access_token;
+                console.log('Got a token from the server! Token: ' + data.access_token);
 				if(localStorage.buy){
 						window.location = "https://pages.razorpay.com/pl_ElRHr5q55UvKL0/view";
 					}

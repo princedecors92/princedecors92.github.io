@@ -73,9 +73,11 @@ $(document).ready(function() {
         console.log(JSON.stringify(data));
         console.log(JSON.stringify(data));
         console.log('Hello ' + data + '! You have successfully accessed to /api/profile.');
+		
         },
         error: function() {
-          alert("Sorry, you are not logged in.");
+          console.log("Sorry, you are not logged in.");
+		  
         }
       });
     }
