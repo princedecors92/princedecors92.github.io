@@ -697,10 +697,12 @@ section {
 }
 
 .about .icon-box {
-  margin-top: 40px;
+  margin-top: 20px;
+  display:table;
 }
 
 .about .icon-box .icon {
+  margin-right:20px;
   float: left;
   display: flex;
   align-items: center;
@@ -727,6 +729,8 @@ section {
 }
 
 .about .icon-box .title {
+  display: table-cell;
+  vertical-align: middle;
   margin-left: 85px;
   font-weight: 700;
   margin-bottom: 10px;
