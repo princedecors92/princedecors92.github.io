@@ -59,6 +59,13 @@ function fbLoginAjax(fbLogin){
                 console.log(data);
                 localStorage.token = data.access_token;
                 alert('Got a token from the server! Token: ' + data.access_token);
+				 console.log('user_name  : ' + data.user_name);
+		  if(data.visiting_card){
+			  localStorage.visiting_card_id =Object.values(data.visiting_card[0]);
+		  console.log('Visiting exists already Visiting Card ID : ' + Object.values(data.visiting_card[0]));
+		  }else{
+		   console.log('no Visiting Card create new ');
+        }
 				if(localStorage.buy){
 						window.location = "https://pages.razorpay.com/pl_ElRHr5q55UvKL0/view";
 					}

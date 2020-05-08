@@ -14,11 +14,11 @@
     <button id="goodLogin">Good Login</button><br><br>
     <button id="badLogin">Bad Login</button><br><br>
     <button id="logout">Logout</button><br><br><br>
-	<input type="text" name="visitingCardId" id="visitingCardId" placeholder="visitingcardid" value="5eb24720d9678c1324d451d1"/><br><br>
+	<input type="text" name="visitingCardId" id="visitingCardId" placeholder="visitingcardid" value="5eb5104112ffcc2c22613084"/><br><br>
 	<button id="getVisitingCardById">getVisitingCardById</button><br><br>
 	<button id="getVisitingCard">getVisitingCard</button><br><br>
 	<button id="createVisitingCard">CreateVisitingCard - Post </button><br><br><br>
-	<input type="text" name="visitingCardIdPut" id="visitingCardIdPut" placeholder="visitingCardIdPut" value="5eb24720d9678c1324d451d1"/><br><br>
+	<input type="text" name="visitingCardIdPut" id="visitingCardIdPut" placeholder="visitingCardIdPut" value="5eb5104112ffcc2c22613084"/><br><br>
 	<button id="editVisitingCardById">EditVisitingCard by ID- Put </button><br><br>
 	
    
@@ -205,8 +205,9 @@
           localStorage.token = data.access_token;
           console.log('access_token : ' + data.access_token);
 		  console.log('user_name  : ' + data.user_name);
-		  if(data.visiting_card){
-		  console.log('Visiting Card ID : ' + Object.values(data.visiting_card[0]));
+		  if(data.visiting_card_exist){
+			  localStorage.visiting_card_id =Object.values(data.visiting_card_id);
+		  console.log('Visiting exists already Visiting Card ID : ' + Object.values(data.visiting_card_id));
 		  }else{
 		   console.log('no Visiting Card create new ');
         }
