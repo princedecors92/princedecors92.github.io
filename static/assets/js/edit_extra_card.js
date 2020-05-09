@@ -21,11 +21,24 @@ $( document ).ready(function() {
 			success: function (data) {
 				console.log('Successfully retrieved card details.');
 				console.log(JSON.stringify(data));
+				var resultJson = data;
+			delete resultJson["_id"];
+			delete resultJson["added_by"];
+			delete resultJson["created"];
+			
+			console.log("Result json ");
+			console.log(resultJson);
+			$('#myform').populate(resultJson);
 			},
-			error: function () {
-				console.log("Sorry, you are not logged in.");
-
-			}
+			error: function (xhr, status, error) {
+					console.log("xhr.responseText : " + xhr.responseText);
+					console.log("status : " + status);
+					console.log("error : " + error);
+					console.log(error);
+					console.log("xhr.status : " + xhr.status);
+					var x = document.getElementById("serverError");
+					x.style.display = "block";
+				}
 		});
 });
 

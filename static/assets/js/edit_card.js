@@ -41,6 +41,15 @@ $(document).ready(function () {
 			console.log(JSON.stringify(data));
 			localStorage.visiting_card_id = Object.values(data._id)
 			console.log('Visiting exist or created Visiting Card ID : ' + Object.values(data._id));
+			
+			var resultJson = data;
+			delete resultJson["_id"];
+			delete resultJson["added_by"];
+			delete resultJson["created"];
+			
+			console.log("Result json ");
+			console.log(resultJson);
+			$('#myform').populate(resultJson);
 		},
 		error: function (xhr, status, error) {
 			console.log(xhr);
@@ -83,7 +92,7 @@ $(document).ready(function () {
 					console.log(data);
 					console.log('Visiting card response : ' + data);
 					//go to next page 
-					//window.location="editExtraCard.html";
+					window.location="editExtraCard.html";
 					if (localStorage.buy) {
 						//window.location = "https://pages.razorpay.com/pl_ElRHr5q55UvKL0/view";
 					} else {
