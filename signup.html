@@ -31,11 +31,18 @@
 					<input type="password" name="confirm_password" id="confirm_password" class="input-text" required>
 				</div>
 				<div id="duplicateEmail" class="form-row duplicateEmail">
-					<label class="duplicateEmail" for="duplicate">Email id already registered. Please login </label>
+					<label class="duplicateEmail" for="duplicate">Email already registered. <a href="login.html">Click Here to Login</a></label>
+					
 				</div>
 				<div id="serverError" class="form-row serverError">
 					<label class="duplicateEmail" for="serverError">Internal Server error </label>
 				</div>
+				<!--<div class="form-row">
+				<select id="listBox" onchange='selct_district(this.value)'></select>
+				</div>
+				<div class="form-row">
+				<select id='secondlist'></select>
+				</div>-->
 				<div class="div_center form-row-last">
 					<input type="submit" name="register" id="signup" class="register" value="Sign Up">
 				</div>
@@ -46,5 +53,6 @@
 	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 	<script src="/static/assets/js/signup.js"></script>
+	<script src="/static/assets/js/state.js"></script>
 </body>
 </html>

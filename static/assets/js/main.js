@@ -1,7 +1,37 @@
-
+	function logout(){
+		console.log("inside logout");
+      localStorage.clear();
+	  window.location="index.html"
+	}
+	
 !(function($) {
-  "use strict";
 
+if(localStorage.token){
+	$("#signup").hide();
+	$("#login").hide();
+	//if logged in show view edit card
+	$("#viewCard").show();
+	$("#editCard").show();
+	//if logged in show logout
+	$("#logout").show();
+}else{
+	$("#signup").show();
+	$("#login").show();
+	
+	$("#viewCard").hide();
+	$("#editCard").hide();
+	
+	$("#logout").hide();
+}
+
+	
+/*$("#logout").on('click', function(e) {
+	 e.preventDefault();
+	console.log("inside logout");
+      localStorage.clear();
+	  window.location="index.html"
+    });*/
+	
 $(".buyNow").on('click', function() {
   console.log("inside buyNow");
   window.open('https://rzp.io/l/AoxsXkt', '_blank');

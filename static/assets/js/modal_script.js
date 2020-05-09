@@ -29,14 +29,3 @@ $(window).resize(function() {
     setModalMaxHeight($('.modal.in'));
   }
 });
-
-/* CodeMirror */
-$('.code').each(function() {
-  var $this = $(this),
-      $code = $this.text(),
-      $mode = $this.data('language');
-
-  $this.empty();
-  $this.addClass('cm-s-bootstrap');
-  CodeMirror.runMode($code, $mode, this);
-});

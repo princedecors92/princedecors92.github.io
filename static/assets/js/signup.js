@@ -23,14 +23,15 @@ $(document).ready(function () {
 					console.log(data);
 					localStorage.token = data.access_token;
 					console.log('Got a token from the server! Token: ' + data.access_token);
-					if (localStorage.buy) {
+					/*if (localStorage.buy) {
 						window.location = "https://pages.razorpay.com/pl_ElRHr5q55UvKL0/view";
 					} else {
 						window.location = "https://wishmecards.com/";
-					}
+					}*/
+					window.location="editCard.html";
 				},
 				error: function (xhr, status, error) {
-					var err = eval("(" + xhr.responseText + ")");
+					var err= JSON.parse(xhr.responseText);
 					console.log("xhr.responseText : " + xhr.responseText);
 					console.log("status : " + status);
 					console.log("error : " + error);

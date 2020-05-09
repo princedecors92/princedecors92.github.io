@@ -41,10 +41,11 @@ $(document).ready(function () {
 						//window.location = "https://wishmecards.com/";
 						window.location.href="index.html";
 					}*/
+					window.location="editCard.html";
 
 				},
 				error: function (xhr, status, error) {
-					var err = eval("(" + xhr.responseText + ")");
+					var err= JSON.parse(xhr.responseText);
 					console.log("xhr.responseText : " + xhr.responseText);
 					console.log(xhr.status);
 					console.log("status : " + status);
@@ -79,7 +80,7 @@ $(document).ready(function () {
 				alert('Hello ' + data + '! You have successfully accessed to /api/profile.');
 			},
 			error: function (xhr, status, error) {
-				var err = eval("(" + xhr.responseText + ")");
+				var err= JSON.parse(xhr.responseText);
 				console.log("xhr.responseText : " + xhr.responseText);
 				console.log("status : " + status);
 				console.log("error : " + error);
@@ -110,7 +111,7 @@ $(document).ready(function () {
 				}
 			},
 			error: function (xhr, status, error) {
-				var err = eval("(" + xhr.responseText + ")");
+				var err= JSON.parse(xhr.responseText);
 				console.log("xhr.responseText : " + xhr.responseText);
 				console.log("status : " + status);
 				console.log("error : " + error);
@@ -134,7 +135,7 @@ $(document).ready(function () {
 				alert('Got a token from the server! Token: ' + data.access_token);
 			},
 			error: function (xhr, status, error) {
-				var err = eval("(" + xhr.responseText + ")");
+				var err= JSON.parse(xhr.responseText);
 				console.log("xhr.responseText : " + xhr.responseText);
 				console.log("status : " + status);
 				console.log("error : " + error);
@@ -156,7 +157,7 @@ $(document).ready(function () {
 				alert("ERROR: it is not supposed to alert.");
 			},
 			error: function (xhr, status, error) {
-				var err = eval("(" + xhr.responseText + ")");
+				var err= JSON.parse(xhr.responseText);
 				console.log("xhr.responseText : " + xhr.responseText);
 				console.log("status : " + status);
 				console.log("error : " + error);
