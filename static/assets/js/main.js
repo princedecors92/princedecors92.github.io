@@ -4,6 +4,29 @@
 	  window.location="index.html"
 	}
 	
+function GetURLParameter(sParam)
+{
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) 
+        {
+            return sParameterName[1];
+        }
+    }
+}
+
+var cardValue = GetURLParameter('card');
+if(cardValue){
+	console.log("Card value exist : "+cardValue);
+	//alert(cardValue);
+	window.location = "viewCard.html";
+}else{
+	console.log("Card value doesnt exist : "+cardValue);
+}
+
 !(function($) {
 
 if(localStorage.token){
