@@ -23,16 +23,50 @@ $(document).ready(function () {
 			localStorage.visiting_card_id = Object.values(data._id)
 			console.log('Visiting exist or created Visiting Card ID : ' + Object.values(data._id));
 
-			var resultJson = data;
-			delete resultJson["_id"];
-			delete resultJson["added_by"];
-			delete resultJson["created"];
-			name.innerText = "public offers";
-			$("#user_name").text(toTitleCase(resultJson["user_name"]));
-			$("#facebook_link").attr("href", toTitleCase(resultJson["facebook_link"]));
-			console.log("Result json ");
-			console.log(resultJson);
-			//$('#myform').populate(resultJson);
+			var user_name = data.user_name;
+			var email = data.email;
+			var mobile_no = data.mobile_no;
+			var company_name = data.company_name;
+			var designation = data.designation;
+			var company_link = data.company_link;
+			var company_address = data.company_address;
+			var services_provided = data.services_provided;
+			var facebook_link = data.facebook_link;
+			var messenger_link = data.messenger_link;
+			var twitter_link = data.twitter_link;
+			var linkedin_link = data.linkedin_link;
+			var instagram_link = data.instagram_link;
+			var youtube_link = data.youtube_link;
+			var payment_link = data.payment_link;
+			var other_payment_link = data.other_payment_link;
+			var google_map_link = data.google_map_link;
+			var profile_picture_link = data.profile_picture_link;
+			
+			if(profile_picture_link){
+				console.log("Profile picture link exist ");
+				$("#profile_picture_link").attr("src",baseUrl+"display_image/5eb69faff3a5795a5feb4a5f");
+			}else{
+				console.log("Profile picture does not link exist ");
+				$("#profile_picture_link").attr("src",baseUrl+"display_image/5eb69faff3a5795a5feb4a5f");
+			}
+
+			$("#user_name").text(toTitleCase(user_name));
+			$("#email").attr("href", "mailto:" + email + "?Subject=Hello");
+			$("#mobile_no").attr("href", "tel:+91" + mobile_no);
+			$('#company_name').text(company_name.toUpperCase());
+			$('#designation').text(designation.toUpperCase())
+			$("#whatsapp_link").attr("href", "https://api.whatsapp.com/send?phone=+91" + mobile_no);
+			$("#company_link").attr("href", company_link);
+			$("#messenger_link").attr("href", messenger_link);
+			$("#facebook_link").attr("href", facebook_link);
+			$("#twitter_link").attr("href", twitter_link);
+			$("#linkedin_link").attr("href", linkedin_link);
+			$("#instagram_link").attr("href", instagram_link);
+			$("#youtube_link").attr("href", youtube_link);
+			$("#payment_link").attr("href", payment_link);
+			$("#other_payment_link").attr("href", other_payment_link);
+			$("#google_map_link").attr("href", google_map_link);
+
 		},
 		error: function (xhr, status, error) {
 			console.log(xhr);
