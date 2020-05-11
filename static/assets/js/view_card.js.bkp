@@ -1,41 +1,16 @@
-$(document).ready(function () {
 var baseUrl = "http://localhost:3500/";
 
-//example url to view card http://localhost:8080/viewCard?user_name=elavarasan
-
-function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        vars[key] = value;
-    });
-    return vars;
-}
-
-function getUrlParam(parameter, defaultvalue){
-    var urlparameter = defaultvalue;
-    if(window.location.href.indexOf(parameter) > -1){
-        urlparameter = getUrlVars()[parameter];
-        }
-    return urlparameter;
-}
-
-var user_name = getUrlParam('user_name','Empty');
-
-console.log("user_name: "+user_name)
-if(user_name == "Empty"){
-	alert("no card exist for this user");
-	window.location = "index.html";
-}
+$(document).ready(function () {
 	$.ajax({
 		type: 'GET',
-		url: baseUrl + 'view_card/'+user_name,
+		url: baseUrl + 'view_card/elavarasan',
 		contentType: "application/json",
-		success: function (data) {
+		sucess: function (data) {
+			alert("Gor reapsone ");
 			console.log(JSON.stringify(data));
-			
+			localStorage.visiting_card_id = Object.values(data._id)
 			console.log('Visiting exist or created Visiting Card ID : ' + Object.values(data._id));
-			card_id = Object.values(data._id);
-			
+
 			var user_name = data.user_name;
 			var email = data.email;
 			var mobile_no = data.mobile_no;
@@ -64,8 +39,8 @@ if(user_name == "Empty"){
 			}
 
 			if(data.profile_picture_exist){
-				console.log("profile picture exist image_ref_id data.profile_picture_exist "+card_id);
-				$("#profile_picture_link").attr("src",baseUrl+"display_image/"+card_id);
+				console.log("profile picture exist image_ref_id data.profile_picture_exist "+data.profile_picture_exist);
+				$("#profile_picture_link").attr("src",baseUrl+"display_image/"+localStorage.visiting_card_id);
 			}else{
 				console.log("no profile picture exist data.profile_picture_exist  image_ref_id "+data.profile_picture_exist);
 			}
@@ -177,10 +152,9 @@ if(user_name == "Empty"){
 				console.log("NO google_map_link "+google_map_link);
 				$('#google_map_link').hide();
 			}
-			
-			
 		},
 		error: function (xhr, status, error) {
+			alert("fail reapsone ");
 			console.log(xhr);
 			var err = JSON.parse(xhr.responseText);
 			console.log("xhr.responseText : " + xhr.responseText);
@@ -190,9 +164,10 @@ if(user_name == "Empty"){
 			console.log("error : " + error);
 		}
 	});
+
 	function toTitleCase(str) {
 		return str.replace(/(?:^|\s)\w/g, function (match) {
 			return match.toUpperCase();
 		});
 	}
-})
+});
