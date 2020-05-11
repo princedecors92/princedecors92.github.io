@@ -42,12 +42,11 @@ $(document).ready(function () {
 			var google_map_link = data.google_map_link;
 			var profile_picture_link = data.profile_picture_link;
 			
-			if(profile_picture_link){
-				console.log("Profile picture link exist ");
-				$("#profile_picture_link").attr("src",baseUrl+"display_image/5eb69faff3a5795a5feb4a5f");
+			if(data.profile_picture_exist){
+				console.log("profile picture exist image_ref_id data.profile_picture_exist "+data.profile_picture_exist);
+				$("#profile_pic").attr("src",baseUrl+"display_image/"+localStorage.visiting_card_id);
 			}else{
-				console.log("Profile picture does not link exist ");
-				$("#profile_picture_link").attr("src",baseUrl+"display_image/5eb69faff3a5795a5feb4a5f");
+				console.log("no profile picture exist data.profile_picture_exist  image_ref_id "+data.profile_picture_exist);
 			}
 
 			$("#user_name").text(toTitleCase(user_name));

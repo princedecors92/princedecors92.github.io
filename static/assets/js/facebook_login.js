@@ -72,7 +72,7 @@ function fbLoginAjax(fbLogin) {
 			if (localStorage.buy) {
 				window.location = "https://pages.razorpay.com/pl_ElRHr5q55UvKL0/view";
 			} else {
-				window.location = "https://wishmecards.com/";
+				window.location = "index.html";
 			}
 		},
 		error: function () {

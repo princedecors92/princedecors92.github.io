@@ -18,6 +18,17 @@
 		<div class="form-v2-content"  style="margin-top:30px;">
 			<form class="form-detail" action="#" method="post" id="myform">
 				<h2 style="font-size: 22px !important;">Create or Edit Business Card</h2>
+				<!--<div style="display:table-cell; vertical-align:middle; text-align:center" class="form-row">
+					<img  alt="Avatar" style="margin: auto; border-radius: 50%; width:130px" src ="/static/assets/img/profile_dummy.PNG" >
+				</div>-->
+				<div class="parent">
+					<a class="child" href="http://localhost:3500/upload_image">
+					<img class="child"  id="profile_pic" src="/static/assets/img/profile_dummy.PNG"/>
+					</a>
+				</div>
+				<div style="height: 10px; width: auto;" class="parent">
+					<a style="height: 10px; width: auto;" class="child" >Click On Image to edit </a>
+				</div>
 				<div class="form-row">
 					<label for="user_name">Name:</label>
 					<input type="text" name="user_name" id="user_name" class="input-text"  minlength="1" maxlength="50" required >

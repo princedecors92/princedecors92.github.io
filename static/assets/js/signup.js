@@ -26,7 +26,7 @@ $(document).ready(function () {
 					/*if (localStorage.buy) {
 						window.location = "https://pages.razorpay.com/pl_ElRHr5q55UvKL0/view";
 					} else {
-						window.location = "https://wishmecards.com/";
+						window.location = "index.html";
 					}*/
 					window.location="editCard.html";
 				},

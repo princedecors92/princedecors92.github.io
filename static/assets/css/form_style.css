@@ -3,6 +3,18 @@ body {
 	background: linear-gradient(to right, #0062E6, #33AEFF);
 }
 
+.parent {
+    display: flex;
+    height: 100px; /* Or whatever */
+}
+
+.child {
+	border-radius: 50%;
+    width: 100px;  /* Or whatever */
+    height: 100px; /* Or whatever */
+    margin: auto;  /* Magic! */
+}
+
 /***********for edit card ***********/
 .address_style{
     height: 72px;

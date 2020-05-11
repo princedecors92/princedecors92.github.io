@@ -1,5 +1,11 @@
 var baseUrl = "http://localhost:3500/";
 
+function uploadImage(){
+	alert("Upload image page called");
+	window.location=baseUrl+"upload_image";
+}
+
+
 $(document).ready(function () {
 	console.log("On Load call get card api " + localStorage.visiting_card_id, );
 	if (localStorage.token) {
@@ -49,6 +55,12 @@ $(document).ready(function () {
 			
 			console.log("Result json ");
 			console.log(resultJson);
+			if(data.profile_picture_exist){
+				console.log("profile picture exist image_ref_id data.profile_picture_exist "+data.profile_picture_exist);
+				$("#profile_pic").attr("src",baseUrl+"display_image/"+localStorage.visiting_card_id);
+			}else{
+				console.log("no profile picture exist data.profile_picture_exist  image_ref_id "+data.profile_picture_exist);
+			}
 			$('#myform').populate(resultJson);
 		},
 		error: function (xhr, status, error) {
@@ -66,7 +78,7 @@ $(document).ready(function () {
 $(document).ready(function () {
 	$("#cancelCard").click(function () {
 		console.log("Cancel was clicked.");
-		window.location = "https://wishmecards.com/";
+		window.location = "index.html";
 	});
 
 
@@ -96,7 +108,7 @@ $(document).ready(function () {
 					if (localStorage.buy) {
 						//window.location = "https://pages.razorpay.com/pl_ElRHr5q55UvKL0/view";
 					} else {
-						//window.location = "https://wishmecards.com/";
+						//window.location = "index.html";
 					}
 				},
 				error: function (xhr, status, error) {

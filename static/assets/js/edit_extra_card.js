@@ -47,7 +47,7 @@ $(document).ready(function () {
 	$("#cancelCard").click(function () {
 		event.preventDefault();
 		console.log("Cancel was clicked.");
-		window.location = "https://wishmecards.com/";
+		window.location = "index.html";
 	});
 
 	$('#myform').submit(function (e) {
@@ -76,7 +76,7 @@ $(document).ready(function () {
 					/*if (localStorage.buy) {
 						window.location = "https://pages.razorpay.com/pl_ElRHr5q55UvKL0/view";
 					} else {
-						window.location = "https://wishmecards.com/";
+						window.location = "index.html";
 					}*/
 				},
 				error: function (xhr, status, error) {

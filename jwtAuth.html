@@ -239,7 +239,7 @@
 		  console.log('user_name  : ' + data.user_name);
 		  if(data.visiting_card_exist){
 			  localStorage.visiting_card_id =Object.values(data.visiting_card_id);
-		  console.log('Visiting exists already Visiting Card ID : ' + Object.values(data.visiting_card_id));
+		  console.log('Visiting exists already Visiting Card ID : ' + Object.values(data[0]._id));
 		  }else{
 		   console.log('no Visiting Card create new ');
         }
