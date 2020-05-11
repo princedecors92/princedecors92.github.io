@@ -195,6 +195,18 @@ if(user_name == "Empty"){
 				$('#google_map_link').hide();
 			}
 			
+			var base_share_url = "https%3A%2F%2Fwishmecards.com%2FviewCard%3Fuser_name%3D";
+			
+			$("#fb_share").attr("href", base_share_url+user_name);
+			$("#twitter_share").attr("href", base_share_url+user_name);
+			$("#linkedin_share").attr("href", base_share_url+user_name);
+			$("#whatsapp_share").attr("href", base_share_url+user_name);
+			
+			
+
+
+
+			
 			
 		},
 		error: function (xhr, status, error) {
