@@ -66,6 +66,7 @@ if(user_name == "Empty"){
 			if(data.profile_picture_exist){
 				console.log("profile picture exist image_ref_id data.profile_picture_exist "+card_id);
 				$("#profile_picture_link").attr("src",baseUrl+"display_image/"+card_id);
+				 $('#profile_picture_link').attr('target', '_blank'); 
 			}else{
 				console.log("no profile picture exist data.profile_picture_exist  image_ref_id "+data.profile_picture_exist);
 			}
@@ -74,6 +75,7 @@ if(user_name == "Empty"){
 			if (email !== "") {
 				console.log("exiy email "+$("#email").val());
 				$("#email").attr("href", "mailto:" + email + "?Subject=Hello");
+				$('#email').attr('target', '_blank'); 
 				$('#email').show();
 			}else{
 				console.log("NO email "+email);
@@ -81,6 +83,7 @@ if(user_name == "Empty"){
 			}
 			if (mobile_no !== "") {
 			$("#mobile_no").attr("href", "tel:+91" + mobile_no);
+			$('#mobile_no').attr('target', '_blank'); 
 			$('#mobile_no').show();
 			}else{
 				console.log("NO mobile_no "+mobile_no);
@@ -88,6 +91,7 @@ if(user_name == "Empty"){
 			}
 			if (company_name !== "") {
 			$('#company_name').text(company_name.toUpperCase());
+			$('#company_name').attr('target', '_blank'); 
 			$('#company_name').show();
 			}else{
 				console.log("NO company_name "+company_name);
@@ -95,6 +99,7 @@ if(user_name == "Empty"){
 			}
 			if (designation !== "") {
 			$('#designation').text(designation.toUpperCase());
+			$('#designation').attr('target', '_blank'); 
 			$('#designation').show();
 			}else{
 				console.log("NO designation "+designation);
@@ -102,6 +107,7 @@ if(user_name == "Empty"){
 			}
 			if (mobile_no !== "") {
 			$("#whatsapp_link").attr("href", "https://api.whatsapp.com/send?phone=+91" + mobile_no);
+			$('#whatsapp_link').attr('target', '_blank'); 
 			$('#whatsapp_link').show();
 			}else{
 				console.log("NO whatsapp_link mobile_no "+mobile_no);
@@ -109,6 +115,7 @@ if(user_name == "Empty"){
 			}
 			if (company_link !== "") {
 			$("#company_link").attr("href", company_link);
+			$('#company_link').attr('target', '_blank'); 
 			$('#company_link').show();
 			}else{
 				console.log("NO company_link "+company_link);
@@ -116,6 +123,7 @@ if(user_name == "Empty"){
 			}
 			if (messenger_link !== "") {
 			$("#messenger_link").attr("href", messenger_link);
+			$('#messenger_link').attr('target', '_blank'); 
 			$('#messenger_link').show();
 			}else{
 				console.log("NO messenger_link "+messenger_link);
@@ -123,6 +131,7 @@ if(user_name == "Empty"){
 			}
 			if (facebook_link !== "") {
 			$("#facebook_link").attr("href", facebook_link);
+			$('#facebook_link').attr('target', '_blank'); 
 			$('#facebook_link').show();
 			}else{
 				console.log("NO facebook_link "+facebook_link);
@@ -130,6 +139,7 @@ if(user_name == "Empty"){
 			}
 			if (twitter_link !== "") {
 			$("#twitter_link").attr("href", twitter_link);
+			$('#twitter_link').attr('target', '_blank'); 
 			$('#twitter_link').show();
 			}else{
 				console.log("NO twitter_link "+twitter_link);
@@ -137,6 +147,7 @@ if(user_name == "Empty"){
 			}
 			if (linkedin_link !== "") {
 			$("#linkedin_link").attr("href", linkedin_link);
+			$('#linkedin_link').attr('target', '_blank'); 
 			$('#linkedin_link').show();
 			}else{
 				console.log("NO linkedin_link "+linkedin_link);
@@ -144,6 +155,7 @@ if(user_name == "Empty"){
 			}
 			if (instagram_link !== "") {
 			$("#instagram_link").attr("href", instagram_link);
+			$('#instagram_link').attr('target', '_blank'); 
 			$('#instagram_link').show();
 			}else{
 				console.log("NO instagram_link "+instagram_link);
@@ -151,6 +163,7 @@ if(user_name == "Empty"){
 			}
 			if (youtube_link !== "") {
 			$("#youtube_link").attr("href", youtube_link);
+			$('#youtube_link').attr('target', '_blank'); 
 			$('#youtube_link').show();
 			}else{
 				console.log("NO youtube_link "+youtube_link);
@@ -158,6 +171,7 @@ if(user_name == "Empty"){
 			}
 			if (payment_link !== "") {
 			$("#payment_link").attr("href", payment_link);
+			$('#payment_link').attr('target', '_blank'); 
 			$('#payment_link').show();
 			}else{
 				console.log("NO payment_link "+payment_link);
@@ -165,6 +179,7 @@ if(user_name == "Empty"){
 			}
 			if (other_payment_link !== "") {
 			$("#other_payment_link").attr("href", other_payment_link);
+			$('#other_payment_link').attr('target', '_blank'); 
 			$('#other_payment_link').show();
 			}else{
 				console.log("NO other_payment_link "+other_payment_link);
@@ -172,6 +187,7 @@ if(user_name == "Empty"){
 			}
 			if (google_map_link !== "") {
 			$("#google_map_link").attr("href", google_map_link);
+			$('#google_map_link').attr('target', '_blank'); 
 			$('#google_map_link').show();
 			}else{
 				console.log("NO google_map_link "+google_map_link);
