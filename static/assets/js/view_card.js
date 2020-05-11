@@ -42,6 +42,14 @@ $(document).ready(function () {
 			var google_map_link = data.google_map_link;
 			var profile_picture_link = data.profile_picture_link;
 			
+			if(facebook_link === "" &&  twitter_link === "" &&  linkedin_link === ""  &&  instagram_link === "" )
+			{
+				$('#follow_me_heading').hide();
+			}
+			if(company_link === "" &&  google_map_link === ""){
+				$('#company_heading').hide();
+			}
+
 			if(data.profile_picture_exist){
 				console.log("profile picture exist image_ref_id data.profile_picture_exist "+data.profile_picture_exist);
 				$("#profile_picture_link").attr("src",baseUrl+"display_image/"+localStorage.visiting_card_id);
@@ -50,22 +58,112 @@ $(document).ready(function () {
 			}
 
 			$("#user_name").text(toTitleCase(user_name));
-			$("#email").attr("href", "mailto:" + email + "?Subject=Hello");
+			if (email !== "") {
+				console.log("exiy email "+$("#email").val());
+				$("#email").attr("href", "mailto:" + email + "?Subject=Hello");
+				$('#email').show();
+			}else{
+				console.log("NO email "+email);
+				$('#email').hide();
+			}
+			if (mobile_no !== "") {
 			$("#mobile_no").attr("href", "tel:+91" + mobile_no);
+			$('#mobile_no').show();
+			}else{
+				console.log("NO mobile_no "+mobile_no);
+				$('#mobile_no').hide();
+			}
+			if (company_name !== "") {
 			$('#company_name').text(company_name.toUpperCase());
-			$('#designation').text(designation.toUpperCase())
+			$('#company_name').show();
+			}else{
+				console.log("NO company_name "+company_name);
+				$('#company_name').hide();
+			}
+			if (designation !== "") {
+			$('#designation').text(designation.toUpperCase());
+			$('#designation').show();
+			}else{
+				console.log("NO designation "+designation);
+				$('#designation').hide();
+			}
+			if (mobile_no !== "") {
 			$("#whatsapp_link").attr("href", "https://api.whatsapp.com/send?phone=+91" + mobile_no);
+			$('#whatsapp_link').show();
+			}else{
+				console.log("NO whatsapp_link mobile_no "+mobile_no);
+				$('#whatsapp_link').hide();
+			}
+			if (company_link !== "") {
 			$("#company_link").attr("href", company_link);
+			$('#company_link').show();
+			}else{
+				console.log("NO company_link "+company_link);
+				$('#company_link').hide();
+			}
+			if (messenger_link !== "") {
 			$("#messenger_link").attr("href", messenger_link);
+			$('#messenger_link').show();
+			}else{
+				console.log("NO messenger_link "+messenger_link);
+				$('#messenger_link').hide();
+			}
+			if (facebook_link !== "") {
 			$("#facebook_link").attr("href", facebook_link);
+			$('#facebook_link').show();
+			}else{
+				console.log("NO facebook_link "+facebook_link);
+				$('#facebook_link').hide();
+			}
+			if (twitter_link !== "") {
 			$("#twitter_link").attr("href", twitter_link);
+			$('#twitter_link').show();
+			}else{
+				console.log("NO twitter_link "+twitter_link);
+				$('#twitter_link').hide();
+			}
+			if (linkedin_link !== "") {
 			$("#linkedin_link").attr("href", linkedin_link);
+			$('#linkedin_link').show();
+			}else{
+				console.log("NO linkedin_link "+linkedin_link);
+				$('#linkedin_link').hide();
+			}
+			if (instagram_link !== "") {
 			$("#instagram_link").attr("href", instagram_link);
+			$('#instagram_link').show();
+			}else{
+				console.log("NO instagram_link "+instagram_link);
+				$('#instagram_link').hide();
+			}
+			if (youtube_link !== "") {
 			$("#youtube_link").attr("href", youtube_link);
+			$('#youtube_link').show();
+			}else{
+				console.log("NO youtube_link "+youtube_link);
+				$('#youtube_link').hide();
+			}
+			if (payment_link !== "") {
 			$("#payment_link").attr("href", payment_link);
+			$('#payment_link').show();
+			}else{
+				console.log("NO payment_link "+payment_link);
+				$('#payment_link').hide();
+			}
+			if (other_payment_link !== "") {
 			$("#other_payment_link").attr("href", other_payment_link);
+			$('#other_payment_link').show();
+			}else{
+				console.log("NO other_payment_link "+other_payment_link);
+				$('#other_payment_link').hide();
+			}
+			if (google_map_link !== "") {
 			$("#google_map_link").attr("href", google_map_link);
-
+			$('#google_map_link').show();
+			}else{
+				console.log("NO google_map_link "+google_map_link);
+				$('#google_map_link').hide();
+			}
 		},
 		error: function (xhr, status, error) {
 			console.log(xhr);
