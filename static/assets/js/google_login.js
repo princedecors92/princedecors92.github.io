@@ -46,6 +46,8 @@ function attachSignin(element) {
 }
 
 function googleLoginAjax(googleLogin) {
+	console.log("Google login data : ");
+	console.log(googleLogin);
 	$.ajax({
 		type: "POST",
 		url: baseUrl + "auth/socialauth",
