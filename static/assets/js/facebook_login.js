@@ -1,4 +1,4 @@
-var baseUrl = "http://localhost:3500/";
+var baseUrl = "https://einvite.tech/";
 // tell the embed parent frame the height of the content
 if (window.parent && window.parent.parent) {
 	window.parent.parent.postMessage(["resultsFrame", {

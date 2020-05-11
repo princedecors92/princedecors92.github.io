@@ -1,4 +1,4 @@
-var baseUrl = "http://localhost:3500/";
+var baseUrl = "https://einvite.tech/";
 
 
 $(document).ready(function () {

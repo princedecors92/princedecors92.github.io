@@ -1,4 +1,4 @@
-var baseUrl = "http://localhost:3500/";
+var baseUrl = "https://einvite.tech/";
 
 $( document ).ready(function() {
     console.log("On Load call get card api "+localStorage.visiting_card_id,);

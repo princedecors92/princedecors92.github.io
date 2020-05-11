@@ -1,5 +1,5 @@
 $(document).ready(function () {
-var baseUrl = "http://localhost:3500/";
+var baseUrl = "https://einvite.tech/";
 
 //example url to view card http://localhost:8080/viewCard?user_name=elavarasan
 
