@@ -2,6 +2,7 @@ $(document).ready(function () {
 var baseUrl = "https://einvite.tech/";
 
 //example url to view card http://localhost:8080/viewCard?user_name=elavarasan
+//https://wishmecards.com/viewCard?user_name=elavarasan
 
 function getUrlVars() {
     var vars = {};
