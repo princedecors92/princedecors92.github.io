@@ -64,11 +64,12 @@ function googleLoginAjax(googleLogin) {
 			} else {
 				console.log('no Visiting Card create new ');
 			}
-			if (localStorage.buy) {
+			/*if (localStorage.buy) {
 				window.location = "https://pages.razorpay.com/pl_ElRHr5q55UvKL0/view";
 			} else {
 				window.location = "index.html";
-			}
+			}*/
+			window.location="editCard.html";
 		},
 		error: function () {
 			console.log("Login Failed");
