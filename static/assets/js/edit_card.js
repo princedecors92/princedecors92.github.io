@@ -1,7 +1,7 @@
 var baseUrl = "https://einvite.tech/";
 
 function uploadImage(){
-	alert("Upload image page called");
+	console.log("Upload image page called");
 	window.location=baseUrl+"upload_image";
 }
 
@@ -166,8 +166,8 @@ $(document).ready(function () {
 			},
 			success: function (data) {
 				console.log(JSON.stringify(data));
-				alert(JSON.stringify(data));
-				alert('Hello ' + data + '! You have successfully accessed to /api/profile.');
+				console.log(JSON.stringify(data));
+				console.log('Hello ' + data + '! You have successfully accessed to /api/profile.');
 			},
 			error: function (xhr, status, error) {
 				var err = JSON.parse(xhr.responseText);

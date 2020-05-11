@@ -23,7 +23,7 @@ var user_name = getUrlParam('user_name','Empty');
 
 console.log("user_name: "+user_name)
 if(user_name == "Empty"){
-	alert("no card exist for this user");
+	console.log("no card exist for this user");
 	window.location = "index.html";
 }
 	$.ajax({

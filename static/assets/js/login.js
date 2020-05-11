@@ -76,8 +76,8 @@ $(document).ready(function () {
 			},
 			success: function (data) {
 				console.log(JSON.stringify(data));
-				alert(JSON.stringify(data));
-				alert('Hello ' + data + '! You have successfully accessed to /api/profile.');
+				console.log(JSON.stringify(data));
+				console.log('Hello ' + data + '! You have successfully accessed to /api/profile.');
 			},
 			error: function (xhr, status, error) {
 				var err= JSON.parse(xhr.responseText);
@@ -85,7 +85,7 @@ $(document).ready(function () {
 				console.log("status : " + status);
 				console.log("error : " + error);
 				console.log("err.Message : " + xhr.responseText.error);
-				alert(error);
+				console.log(error);
 			}
 		});
 	});
@@ -132,7 +132,7 @@ $(document).ready(function () {
 			success: function (data) {
 				console.log(data);
 				localStorage.token = data.access_token;
-				alert('Got a token from the server! Token: ' + data.access_token);
+				console.log('Got a token from the server! Token: ' + data.access_token);
 			},
 			error: function (xhr, status, error) {
 				var err= JSON.parse(xhr.responseText);
@@ -140,7 +140,7 @@ $(document).ready(function () {
 				console.log("status : " + status);
 				console.log("error : " + error);
 				console.log("err.Message : " + xhr.responseText.error);
-				alert(error);
+				console.log(error);
 			}
 		});
 	});
@@ -154,7 +154,7 @@ $(document).ready(function () {
 				"password": "default1"
 			}),
 			success: function (data) {
-				alert("ERROR: it is not supposed to alert.");
+				console.log("ERROR: it is not supposed to console.log.");
 			},
 			error: function (xhr, status, error) {
 				var err= JSON.parse(xhr.responseText);
@@ -162,7 +162,7 @@ $(document).ready(function () {
 				console.log("status : " + status);
 				console.log("error : " + error);
 				console.log("err.Message : " + xhr.responseText.error);
-				alert(error);
+				console.log(error);
 			}
 		});
 	});

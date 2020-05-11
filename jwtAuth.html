@@ -42,8 +42,8 @@
         },
         success: function(data) {
         console.log(JSON.stringify(data));
-        alert(JSON.stringify(data));
-          alert('Hello ' + data + '! You have successfully accessed to /api/profile.');
+        console.log(JSON.stringify(data));
+          console.log('Hello ' + data + '! You have successfully accessed to /api/profile.');
         },
         error: function (xhr, status, error) {
 					var err= JSON.parse(xhr.responseText);
@@ -69,8 +69,8 @@
         },
         success: function(data) {
         console.log(JSON.stringify(data));
-        alert(JSON.stringify(data));
-          alert('Hello ' + data + '! You have successfully accessed to /api/profile.');
+        console.log(JSON.stringify(data));
+          console.log('Hello ' + data + '! You have successfully accessed to /api/profile.');
         },
         error: function (xhr, status, error) {
 					var err= JSON.parse(xhr.responseText);
@@ -100,8 +100,8 @@
         },
         success: function(data) {
         console.log(JSON.stringify(data));
-        alert(JSON.stringify(data));
-          alert('Hello ' + data + '! You have successfully accessed to /api/profile.');
+        console.log(JSON.stringify(data));
+          console.log('Hello ' + data + '! You have successfully accessed to /api/profile.');
         },
         error: function (xhr, status, error) {
 					var err= JSON.parse(xhr.responseText);
@@ -145,8 +145,8 @@
         },
         success: function(data) {
         console.log(JSON.stringify(data));
-        alert(JSON.stringify(data));
-          alert('Hello ' + data + '! You have successfully accessed to /api/profile.');
+        console.log(JSON.stringify(data));
+          console.log('Hello ' + data + '! You have successfully accessed to /api/profile.');
         },
        error: function (xhr, status, error) {
 					var err= JSON.parse(xhr.responseText);
@@ -264,7 +264,7 @@
           "password": "default1"
         }),
         success: function(data) {
-          alert("ERROR: it is not supposed to alert.");
+          console.log("ERROR: it is not supposed to console.log.");
         },
         error: function (xhr, status, error) {
 					var err= JSON.parse(xhr.responseText);
@@ -308,8 +308,8 @@
 			},
 			success: function (data) {
 				console.log(JSON.stringify(data));
-				alert(JSON.stringify(data));
-				alert('Hello ' + data + '! You have successfully accessed to /api/profile.');
+				console.log(JSON.stringify(data));
+				console.log('Hello ' + data + '! You have successfully accessed to /api/profile.');
 			},
 			error: function (xhr, status, error) {
 				var err= JSON.parse(xhr.responseText);

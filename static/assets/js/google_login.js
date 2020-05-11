@@ -41,7 +41,7 @@ function attachSignin(element) {
 
 		},
 		function (error) {
-			alert(JSON.stringify(error, undefined, 2));
+			console.log(JSON.stringify(error, undefined, 2));
 		});
 }
 
@@ -56,7 +56,7 @@ function googleLoginAjax(googleLogin) {
 		success: function (data) {
 			console.log(data);
 			localStorage.token = data.access_token;
-			alert('Got a token from the server! Token: ' + data.access_token);
+			console.log('Got a token from the server! Token: ' + data.access_token);
 			console.log('user_name  : ' + data.user_name);
 			if (data.visiting_card_exist) {
 				localStorage.visiting_card_id = Object.values(data.visiting_card_id);
@@ -71,7 +71,7 @@ function googleLoginAjax(googleLogin) {
 			}
 		},
 		error: function () {
-			alert("Login Failed");
+			console.log("Login Failed");
 		}
 	});
 }
