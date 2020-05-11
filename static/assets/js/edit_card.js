@@ -36,7 +36,8 @@ $(document).ready(function () {
 			"youtube_link": "",
 			"payment_link": "",
 			"other_payment_link": "",
-			"google_map_link": ""
+			"google_map_link": "",
+			"profile_picture_exist": false
 		}),
 		beforeSend: function (xhr) {
 			if (localStorage.token) {
