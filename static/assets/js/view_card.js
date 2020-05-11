@@ -223,6 +223,8 @@ if(user_name == "Empty"){
 			console.log(xhr.status);
 			console.log("status : " + status);
 			console.log("error : " + error);
+			console.log("no card exist for this user");
+	window.location = "index.html";
 		}
 	});
 	function toTitleCase(str) {
