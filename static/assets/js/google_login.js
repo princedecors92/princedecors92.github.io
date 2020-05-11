@@ -36,7 +36,7 @@ function attachSignin(element) {
 			loginData.picture_link = profile.getImageUrl();
 
 			var googleLogin = JSON.stringify(loginData);
-			googleLoginAjax(fbLogin);
+			googleLoginAjax(googleLogin);
 
 
 		},
