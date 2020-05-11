@@ -44,7 +44,7 @@ $(document).ready(function () {
 			
 			if(data.profile_picture_exist){
 				console.log("profile picture exist image_ref_id data.profile_picture_exist "+data.profile_picture_exist);
-				$("#profile_pic").attr("src",baseUrl+"display_image/"+localStorage.visiting_card_id);
+				$("#profile_picture_link").attr("src",baseUrl+"display_image/"+localStorage.visiting_card_id);
 			}else{
 				console.log("no profile picture exist data.profile_picture_exist  image_ref_id "+data.profile_picture_exist);
 			}
