@@ -53,7 +53,8 @@ $(document).ready(function () {
 			delete resultJson["_id"];
 			delete resultJson["added_by"];
 			delete resultJson["created"];
-			
+			localStorage.user_name=data.user_name;
+			console.log("localStorage.user_name : "+localStorage.user_name);
 			console.log("Result json ");
 			console.log(resultJson);
 			if(data.profile_picture_exist){
