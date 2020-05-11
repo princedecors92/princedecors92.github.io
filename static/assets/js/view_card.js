@@ -24,8 +24,14 @@ var user_name = getUrlParam('user_name','Empty');
 
 console.log("user_name: "+user_name)
 if(user_name == "Empty"){
-	console.log("no card exist for this user");
+	console.log("localStorage.user_name : "+localStorage.user_name);
+	if(localStorage.user_name){
+		user_name = localStorage.user_name;
+	}else{
+		console.log("no card exist for this user");
 	window.location = "index.html";
+	}
+	
 }
 	$.ajax({
 		type: 'GET',

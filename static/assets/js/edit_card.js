@@ -104,6 +104,7 @@ $(document).ready(function () {
 				success: function (data) {
 					console.log(data);
 					console.log('Visiting card response : ' + data);
+					localStorage.user_name = data.user_name;
 					//go to next page 
 					window.location="editExtraCard.html";
 					if (localStorage.buy) {
