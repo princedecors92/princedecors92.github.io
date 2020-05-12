@@ -53,7 +53,10 @@ $(document).ready(function () {
 			delete resultJson["_id"];
 			delete resultJson["added_by"];
 			delete resultJson["created"];
+			if(data.user_name){
+				console.log("Exist username and assigining");
 			localStorage.user_name=data.user_name;
+			}
 			console.log("localStorage.user_name : "+localStorage.user_name);
 			console.log("Result json ");
 			console.log(resultJson);
