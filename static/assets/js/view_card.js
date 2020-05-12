@@ -25,7 +25,7 @@ var user_name = getUrlParam('user_name','Empty');
 console.log("user_name: "+user_name)
 if(user_name == "Empty"){
 	console.log("localStorage.user_name : "+localStorage.user_name);
-	alert('localStorage.user_name : ' + localStorage.user_name);
+	//alert('localStorage.user_name : ' + localStorage.user_name);
 	if(localStorage.user_name){
 		user_name = localStorage.user_name;
 	}else{
