@@ -1,5 +1,8 @@
 $(document).ready(function(){
 		
+		console.log("On Load call get card api " + localStorage.visiting_card_id );
+		var visiting_card_id = localStorage.visiting_card_id;
+		
 		var $loading = $('#loader').hide();
 	$(document)
 		.ajaxStart(function () {
@@ -50,7 +53,7 @@ $(document).ready(function(){
                 fd.append('file',file);
 
                 $.ajax({
-                    url:'http://localhost:3500/upload_image',
+                    url:'http://localhost:3500/upload_image/'+visiting_card_id,
                     type:'post',
                     data:fd,
                     contentType: false,
