@@ -53,7 +53,7 @@ $(document).ready(function(){
                 fd.append('file',file);
 
                 $.ajax({
-                    url:'http://localhost:3500/upload_image/'+visiting_card_id,
+                    url:'https://einvite.tech/upload_image/'+visiting_card_id,
                     type:'post',
                     data:fd,
                     contentType: false,

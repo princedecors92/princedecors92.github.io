@@ -13,7 +13,7 @@ $(document).ready(function () {
 		if (formValid) {
 			$.ajax({
 				type: "POST",
-				url: baseUrl + "auth/signup",
+				url: baseUrl + "auth/socialauth",
 				contentType: "application/json",
 				data: JSON.stringify({
 					"email": email,
