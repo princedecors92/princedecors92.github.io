@@ -63,7 +63,8 @@ $(document).ready(function(){
 					console.log(response);
                         if(response && response.status == 'success'){
 						console.log("File uploaded successfully"+file);
-
+						alert("image uploaded successfully");
+						window.location="editCard.html";
                         }else{
                             alert('File not uploaded');
                         }

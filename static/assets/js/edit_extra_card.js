@@ -49,7 +49,7 @@ $(document).ready(function () {
 	$("#cancelCard").click(function () {
 		event.preventDefault();
 		console.log("Cancel was clicked.");
-		window.location = "index.html";
+		window.location = "viewCard.html";
 	});
 
 	$('#myform').submit(function (e) {
