@@ -21,6 +21,8 @@ $( document ).ready(function() {
 			success: function (data) {
 				console.log('Successfully retrieved card details.');
 				console.log(JSON.stringify(data));
+				console.log('Visiting card response : ' + data);
+					localStorage.user_name = data.user_name;
 				var resultJson = data;
 			delete resultJson["_id"];
 			delete resultJson["added_by"];
