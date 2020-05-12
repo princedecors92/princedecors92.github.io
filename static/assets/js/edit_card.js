@@ -106,7 +106,8 @@ $(document).ready(function () {
 					console.log(data);
 					console.log('Visiting card response : ' + data);
 					localStorage.user_name = data.user_name;
-					//go to next page 
+					console.log('localStorage.user_name : ' + localStorage.user_name);
+					alert('localStorage.user_name : ' + localStorage.user_name);
 					window.location="editExtraCard.html";
 					if (localStorage.buy) {
 						//window.location = "https://pages.razorpay.com/pl_ElRHr5q55UvKL0/view";

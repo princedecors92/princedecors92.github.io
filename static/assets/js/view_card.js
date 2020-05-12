@@ -25,6 +25,7 @@ var user_name = getUrlParam('user_name','Empty');
 console.log("user_name: "+user_name)
 if(user_name == "Empty"){
 	console.log("localStorage.user_name : "+localStorage.user_name);
+	alert('localStorage.user_name : ' + localStorage.user_name);
 	if(localStorage.user_name){
 		user_name = localStorage.user_name;
 	}else{
@@ -218,12 +219,14 @@ if(user_name == "Empty"){
 		error: function (xhr, status, error) {
 			console.log(xhr);
 			var err = JSON.parse(xhr.responseText);
+			
 			console.log("xhr.responseText : " + xhr.responseText);
 			console.log("error message : " + err.error);
 			console.log(xhr.status);
 			console.log("status : " + status);
 			console.log("error : " + error);
 			console.log("no card exist for this user");
+			alert("Error occured");
 	window.location = "index.html";
 		}
 	});
