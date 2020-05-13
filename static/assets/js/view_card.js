@@ -202,12 +202,12 @@ if(user_name == "Empty"){
 				$('#google_map_link').hide();
 			}
 			
-			var base_share_url = "https%3A%2F%2Fwishmecards.com%2FviewCard%3Fuser_name%3D";
+			var base_share_url = "https%3A%2F%2Feinvite.tech%2Fcard%2F";
 			
-			$("#fb_share").attr("href", base_share_url+user_name);
-			$("#twitter_share").attr("href", base_share_url+user_name);
-			$("#linkedin_share").attr("href", base_share_url+user_name);
-			$("#whatsapp_share").attr("href", base_share_url+user_name);
+			$("#fb_share").attr("href", "https://www.facebook.com/sharer/sharer.php?u="+base_share_url+user_name);
+			$("#twitter_share").attr("href", "https://twitter.com/intent/tweet?text="+base_share_url+user_name);
+			$("#linkedin_share").attr("href", "https://www.linkedin.com/shareArticle?mini=true&url="+base_share_url+user_name);
+			$("#whatsapp_share").attr("href", "whatsapp://send?text="+base_share_url+user_name);
 			
 			
 
