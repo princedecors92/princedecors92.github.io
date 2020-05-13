@@ -13,6 +13,7 @@ body {
     width: 100px;  /* Or whatever */
     height: 100px; /* Or whatever */
     margin: auto;  /* Magic! */
+	font-size:15px;
 }
 
 /***********for edit card ***********/
