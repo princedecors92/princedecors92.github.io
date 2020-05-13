@@ -14,7 +14,7 @@ function getUrlVars() {
 
 function getUrlParam(parameter, defaultvalue){
     var urlparameter = defaultvalue;
-	var str = window.location.href;
+	var str = document.referrer;
 	console.log(" Curent url : "+str);
 var n = str.includes("einvite");
 console.log(" n : "+n);
