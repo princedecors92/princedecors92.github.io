@@ -95,6 +95,7 @@ $(document).ready(function () {
 		var formValid = $("#myform").valid();
 		console.log("Form valid : " + formValid);
 		if (formValid) {
+			localStorage.user_name = data.user_name;
 			$.ajax({
 				type: "PUT",
 				url: baseUrl + "visiting_card/" + localStorage.visiting_card_id,
@@ -120,6 +121,7 @@ $(document).ready(function () {
 				},
 				error: function (xhr, status, error) {
 					console.log(xhr);
+					localStorage.user_name="";
 					var err = JSON.parse(xhr.responseText);
 					console.log("xhr.responseText : " + xhr.responseText);
 					console.log("status : " + status);
