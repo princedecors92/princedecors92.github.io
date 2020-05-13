@@ -49,7 +49,9 @@ $(document).ready(function(){
                 var fd = new FormData();
 
                 var file = $('#file')[0].files[0];
-
+				console.log("File : "+file);
+				if(file){
+					console.log("File exist : "+file);
                 fd.append('file',file);
 
                 $.ajax({
@@ -79,7 +81,11 @@ $(document).ready(function(){
 			console.log("status : " + status);
 			console.log("error : " + error);
 		}
-                });
+			});}else{
+				console.log("File doesnt exist : "+file);
+				alert("Please select the image to upload ");
+			}
+				
             });
         });
 

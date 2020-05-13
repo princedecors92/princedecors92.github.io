@@ -1,8 +1,8 @@
 .container{
     margin: 0 auto;
     border: 0px solid black;
-    width: 50%;
-    height: 250px;
+    width: 100%;
+    height: auto;
     border-radius: 3px;
     text-align: center;
 }
