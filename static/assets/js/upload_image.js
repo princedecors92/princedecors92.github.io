@@ -80,6 +80,8 @@ $(document).ready(function(){
 			console.log(xhr.status);
 			console.log("status : " + status);
 			console.log("error : " + error);
+			alert("Some error occured");
+			window.location = "index.html";
 		}
 			});}else{
 				console.log("File doesnt exist : "+file);
