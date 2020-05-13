@@ -14,6 +14,17 @@ function getUrlVars() {
 
 function getUrlParam(parameter, defaultvalue){
     var urlparameter = defaultvalue;
+	var str = window.location.href;
+	console.log(" Curent url : "+str);
+var n = str.includes("einvite");
+console.log(" n : "+n);
+if(n){
+	$("#editCard").hide();
+	$("#home").hide();
+}else{
+	$("#editCard").show();
+	$("#home").show();
+}
     if(window.location.href.indexOf(parameter) > -1){
         urlparameter = getUrlVars()[parameter];
         }
