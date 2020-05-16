@@ -21,6 +21,7 @@
       <link href="/static/assets/css/style.css" rel="stylesheet">
      <!-- Facebook Pixel Code -->
 <script>
+
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -38,6 +39,31 @@
 <!-- End Facebook Pixel Code -->
    </head>
    <body>
+<!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v7.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your customer chat code -->
+      <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="102828641276607"
+  logged_in_greeting="Hi! Thanks for contacting us.Please share your mobile no."
+  logged_out_greeting="Hi! Thanks for contacting us.Please share your mobile no.">
+      </div>
       <!-- ======= Header ======= -->
       <header id="header" class="fixed-top d-flex align-items-center">
          <div class="container d-flex align-items-center">
