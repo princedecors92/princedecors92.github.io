@@ -39,7 +39,7 @@ if(localStorage.token){
 	
 $(".buyNow").on('click', function() {
   console.log("inside buyNow");
-  window.open('https://rzp.io/l/AoxsXkt', '_blank');
+  window.open('https://rzp.io/l/rWW5eOg', '_blank');
 });
 
   // Preloader
