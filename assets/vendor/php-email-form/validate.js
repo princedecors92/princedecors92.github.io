@@ -2,7 +2,7 @@ jQuery(document).ready(function($) {
   "use strict";
 
   //Contact
-  $('form.php-email-form').submit(function() {
+  $('form.php-email-form1').submit(function() {
    
     var f = $(this).find('.form-group'),
       ferror = false,
