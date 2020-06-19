@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h1>The video autoplay attribute</h1>
+
+<video id ="vid" width="320" height="320" controls loop autoplay >
+  <source src="/invitation/assets/videos/invitation.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<button onclick="playAudio()" type="button">Play Audio</button>
+<script>
+var x = document.getElementById("vid"); 
+
+function playAudio() { 
+  x.play(); 
+} 
+</script>
+</body>
+</html>
