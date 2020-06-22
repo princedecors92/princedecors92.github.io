@@ -5,6 +5,7 @@
     text-align: center;
     font-family: arial;
     background-image: url(/invitation/demo/assets/images/black_background.jpg);
+	background-repeat:no-repeat;
     height: 2150px;
     background-size: 100%;	
 }
