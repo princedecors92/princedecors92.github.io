@@ -1,0 +1,105 @@
+<html><head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Sofia|Baloo|Roboto|Tangerine" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Metal+Mania&amp;display=swap" rel="stylesheet">
+<style>
+.card {
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    background-image: url(/invitation/assets/images/sathvick_background.jpg);
+    height: 1600px;
+    background-size: 100%;	
+}
+.title {
+  color: grey;
+  font-size: 18px;
+}
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+} 	
+</style>
+</head>
+<body>
+<!--https://www.w3schools.com/howto/howto_css_profile_card.asp-->
+
+<div class="card">
+  <div style="padding-top: 580px;">
+ <section>
+  <h1 style="color:#72c1ff; font-family: 'Tangerine', serif; font-size: 48px; margin-bottom:10px;margin-top:10px;" >Count Down</h1>
+  <p id="demo" style ="margin:0px; color:#ffeb3b; font-family: 'Metal Mania', cursive; font-size:38px;"></p>
+  </section>
+  <h1 style="color:#72c1ff;font-family: 'Tangerine', serif;font-size: 48px;margin-bottom:10px;margin-top: 10px;">Calendar</h1>
+  <div style="margin: 24px 0;">
+    <a style="color:yellow;" target="blank" href="http://www.google.com/calendar/event?action=TEMPLATE&dates=20200820T170000Z%2F20200820T210000Z&text=Sathvick's%20Birthday&location=D3-306%20purva%20Windermere%20Street%20Address%20Line%202%3A%20Bhavani%20amman%20kovil%20street%2C%20Pallikaranai&details=We%20welcome%20you%20to%20boss's%20first%20bday"><i style="color:yellow;" class="fa fa-calendar"></i>&nbsp;&nbsp;Save the Date</a>
+  </div>
+  </section>
+  <section>
+  <h1 style="color:#72c1ff;font-family: 'Tangerine', serif;font-size: 48px;margin-bottom:10px;margin-top: 10px;">Location</h1>
+   <div style="/* margin: 24px 0; */">
+    <a target="blank" href="https://goo.gl/maps/hoHn2vjEZkAnUwyv7" style="color:yellow;"><i style="color:yellow;" class="fa fa-location-arrow"></i>&nbsp;&nbsp;Click for Directions</a>
+  </div>
+  </section>
+   <section>
+  <h1 style="color:#72c1ff;font-family: 'Tangerine', serif;font-size: 48px;margin-bottom:10px;margin-top: 180px;">I am coming</h1>
+  <div style="margin: 24px 0;">
+    <a target="blank" style="color:yellow;" href="https://wa.link/nx0t3w"><i style="color:yellow;" class="fa fa-whatsapp"></i>&nbsp;&nbsp;Click to confirm</a>
+  </div>
+  </section>
+
+  </div>
+</div>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Aug 20, 2020 18:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+</body></html>
