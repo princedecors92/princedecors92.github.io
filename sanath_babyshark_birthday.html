@@ -1,0 +1,73 @@
+<html><head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Sofia|Baloo|Roboto|Tangerine" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Metal+Mania&amp;display=swap" rel="stylesheet">
+<link href="/invitation/assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+<!--https://www.w3schools.com/howto/howto_css_profile_card.asp-->
+
+<div class="sanath_card">
+  <!--<img src="/w3images/team2.jpg" alt="John" style="width:100%">-->
+  <!--<img src="/assets/images/background.jpg" alt="" class="" style="width:100%">-->
+  <!--countdown location calender whatsapp call message fb link for bride and groom-->
+  <div style="padding-top: 580px;">
+  <section>
+  <h1 style="color:#72c1ff; font-family: 'Tangerine', serif; font-size: 48px; margin-bottom:10px;margin-top:10px;" >Count Down</h1>
+  <p id="demo" style ="margin:0px; color:#ffeb3b; font-family: 'Metal Mania', cursive; font-size:38px;"></p>
+  </section>
+  <section>
+  <h1 style="color:#72c1ff;font-family: 'Tangerine', serif;font-size: 48px;margin-bottom:10px;margin-top: 10px;">Calendar</h1>
+  <div style="margin: 24px 0;">
+    <a style="color:yellow;" target="blank" href="https://calendar.google.com/calendar/r/eventedit?dates=20201106T180000Z/20201106T210000Z&text=Sanath+Birthday+Party&location=Fazari+Multi+Cuisine+Restaurant&details&sf=true"><i style="color:yellow;" class="fa fa-calendar"></i>&nbsp;&nbsp;Save the Date</a>
+  </div>
+  </section>
+  <section>
+  <h1 style="color:#72c1ff;font-family: 'Tangerine', serif;font-size: 48px;margin-bottom:10px;margin-top: 10px;">Location</h1>
+   <div style="/* margin: 24px 0; */">
+    <a target="blank" href="https://goo.gl/maps/7xxawPMmGhiGdnWs7" style="color:yellow;"><i style="color:yellow;" class="fa fa-location-arrow"></i>&nbsp;&nbsp;Click for Directions</a>
+  </div>
+  </section>
+   <section>
+  <h1 style="color:#72c1ff;font-family: 'Tangerine', serif;font-size: 48px;margin-bottom:10px;margin-top: 180px;">I am coming</h1>
+  <div style="margin: 24px 0;">
+    <a target="blank" style="color:yellow;" href="https://wa.link/ddquvu"><i style="color:yellow;" class="fa fa-whatsapp"></i>&nbsp;&nbsp;Click to confirm</a>
+  </div>
+  </section>
+
+  </div>
+</div>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Nov 06, 2020 18:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+</body></html>
