@@ -9,6 +9,37 @@
     background-size: 100%;	
 }
 
+.sanath_card {
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    background-image: url(/invitation/assets/images/sanath_background.jpg);
+    height: 1600px;
+    background-size: 100%;	
+}
+
+.vignesh_praveena_card {
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    background-image: url(/invitation/assets/images/vignesh_praveena_background.jpg);
+    height: 1600px;
+    background-size: 100%;	
+}
+.ravi_pooja_card {
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    background-image: url(/invitation/assets/images/ravi_pooja_background.jpg);
+    height: 1600px;
+    background-size: 100%;	
+}
 .card1 {
      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
@@ -30,6 +61,18 @@
     height: 1600px;
     background-size: 100%;	
 }
+
+.laveena_card {
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    background-image: url(/invitation/assets/images/laveena_background.jpg);
+    height: 1600px;
+    background-size: 100%;	
+}
+
 
 .nevan_card {
      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
