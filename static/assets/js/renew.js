@@ -5,7 +5,7 @@ $(document).ready(function () {
 
 	$('#renew').click(function () {
 		event.preventDefault();
-		 window.open('https://wa.link/bkbpar', '_blank');
+		window.location = "https://wa.link/bkbpar";
 	});
 
 	var $loading = $('#loader').hide();
